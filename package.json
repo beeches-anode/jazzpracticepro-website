@@ -1,0 +1,37 @@
+{
+  "name": "jazzpracticepro-website",
+  "version": "1.0.0",
+  "description": "Official marketing website for JazzPracticePro - a practice journal app for jazz musicians",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "npx serve .",
+    "dev": "python3 -m http.server 8000",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "jazz",
+    "music",
+    "practice",
+    "journal",
+    "app",
+    "website",
+    "landing-page"
+  ],
+  "author": "JazzPracticePro",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/jazzpracticepro-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/jazzpracticepro-website/issues"
+  },
+  "homepage": "https://jazzpracticepro.com",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

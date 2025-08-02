@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JazzPracticePro - Practice Journal for Jazz Musicians</title>
+    <meta
+      name="description"
+      content="A simple, structured practice journal for jazz musicians. Track activities, build repertoire, and get AI feedback to improve your jazz skills."
+    />
+    <meta
+      name="keywords"
+      content="jazz, practice, music, journal, repertoire, AI feedback, musician"
+    />
+    <meta name="author" content="JazzPracticePro" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jazzpracticepro.com/" />
+    <meta
+      property="og:title"
+      content="JazzPracticePro - Practice Journal for Jazz Musicians"
+    />
+    <meta
+      property="og:description"
+      content="A simple, structured practice journal for jazz musicians. Track activities, build repertoire, and get AI feedback."
+    />
+    <meta
+      property="og:image"
+      content="https://jazzpracticepro.com/JazzPracticePro_logo_large.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://jazzpracticepro.com/" />
+    <meta
+      property="twitter:title"
+      content="JazzPracticePro - Practice Journal for Jazz Musicians"
+    />
+    <meta
+      property="twitter:description"
+      content="A simple, structured practice journal for jazz musicians. Track activities, build repertoire, and get AI feedback."
+    />
+    <meta
+      property="twitter:image"
+      content="https://jazzpracticepro.com/JazzPracticePro_logo_large.png"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-primary': '#7c3aed',
+              'brand-secondary': '#8b5cf6',
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+
+    <style>
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .hero-gradient {
+        background: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%);
+      }
+      .feature-card:hover {
+        transform: translateY(-2px);
+        transition: transform 0.2s ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center">
+            <img
+              src="/JazzPracticePro_logo_large.png"
+              alt="JazzPracticePro"
+              class="h-8 w-auto"
+            />
+            <span class="ml-2 text-xl font-bold text-gray-800"
+              >JazzPracticePro</span
+            >
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#features"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >Features</a
+            >
+            <a
+              href="#demo"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >Demo</a
+            >
+            <a
+              href="#about"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >About</a
+            >
+          </div>
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-600 hover:text-purple-600"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+          <a
+            href="#features"
+            class="block py-2 text-gray-600 hover:text-purple-600"
+            >Features</a
+          >
+          <a href="#demo" class="block py-2 text-gray-600 hover:text-purple-600"
+            >Demo</a
+          >
+          <a
+            href="#about"
+            class="block py-2 text-gray-600 hover:text-purple-600"
+            >About</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Trial Banner -->
+    <div
+      class="bg-gradient-to-r from-purple-50 to-blue-50 border-b border-purple-200 text-center py-4 px-4"
+    >
+      <div class="max-w-4xl mx-auto">
+        <p class="text-purple-800 text-sm sm:text-base font-medium">
+          🎉 JazzPracticePro is free during our
+          <strong>Launch Trial until September 30, 2025</strong>!<br />
+          Enjoy full access — including up to
+          <strong>10 AI sessions per day</strong>.<br />
+          After that, we plan to review the use of AI and how to manage those
+          costs.
+        </p>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-center py-16 px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-2">Welcome to</h1>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        <span class="text-purple-600">JazzPracticePro</span>
+      </h1>
+      <div class="flex justify-center mb-6">
+        <img
+          src="/JazzPracticePro_logo_large.png"
+          alt="JazzPracticePro Logo"
+          class="h-24 w-auto"
+        />
+      </div>
+      <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        A simple, structured practice journal for jazz musicians. Track your
+        practising, gigging, and lesson activities. Build your repertoire and be
+        prompted which tunes to practice and then reflect with AI feedback to
+        accelerate your jazz development.
+      </p>
+      <div
+        class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
+      >
+        <a
+          href="#"
+          class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors shadow-lg hover:shadow-xl"
+        >
+          Coming Soon to the App Store
+        </a>
+        <a
+          href="#demo"
+          class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-8 py-4 rounded-lg text-lg font-medium transition-colors"
+        >
+          Watch Demo
+        </a>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 px-6 max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Key Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div
+          class="feature-card bg-white border rounded-lg shadow-lg p-6 text-center"
+        >
+          <div class="text-4xl mb-4">🎵</div>
+          <h3 class="text-xl font-semibold mb-3">Track Activities</h3>
+          <p class="text-gray-600">
+            Log individual, ensemble, gig, and feedback activities — quickly and
+            clearly with structured templates.
+          </p>
+        </div>
+        <div
+          class="feature-card bg-white border rounded-lg shadow-lg p-6 text-center"
+        >
+          <div class="text-4xl mb-4">📚</div>
+          <h3 class="text-xl font-semibold mb-3">Repertoire Builder</h3>
+          <p class="text-gray-600">
+            Track tunes with spaced repetition and status-based learning stages
+            to build your jazz vocabulary.
+          </p>
+        </div>
+        <div
+          class="feature-card bg-white border rounded-lg shadow-lg p-6 text-center"
+        >
+          <div class="text-4xl mb-4">🤖</div>
+          <h3 class="text-xl font-semibold mb-3">AI Feedback</h3>
+          <p class="text-gray-600">
+            Use the AI as a fun way to get tailored suggestions and ideas for
+            practice and reflection from a coach designed for jazz musicians.
+          </p>
+        </div>
+        <div
+          class="feature-card bg-white border rounded-lg shadow-lg p-6 text-center"
+        >
+          <div class="text-4xl mb-4">🎯</div>
+          <h3 class="text-xl font-semibold mb-3">Goal Setting</h3>
+          <p class="text-gray-600">
+            Plan your short-term and long-term jazz growth with focused targets
+            and progress tracking.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-16 px-6 bg-gray-50 text-center">
+      <h2 class="text-3xl font-bold mb-8">See it in Action</h2>
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img
+            src="/media/demo.gif"
+            alt="JazzPracticePro demo"
+            class="w-full rounded-lg"
+            loading="lazy"
+          />
+        </div>
+        <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+          Watch how easy it is to track your practice sessions, manage your
+          repertoire, and get AI-powered insights to improve your jazz playing.
+        </p>
+      </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section class="py-16 px-6 max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div
+            class="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
+          >
+            <span class="text-2xl font-bold text-purple-600">1</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Sign Up & Set Up</h3>
+          <p class="text-gray-600">
+            Download the app, choose your instrument, and provide your
+            background.
+          </p>
+        </div>
+        <div class="text-center">
+          <div
+            class="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
+          >
+            <span class="text-2xl font-bold text-purple-600">2</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Track Your Practice</h3>
+          <p class="text-gray-600">
+            Log your practice sessions, gigs, and rehearsals. Build your
+            repertoire with learning status tracking.
+          </p>
+        </div>
+        <div class="text-center">
+          <div
+            class="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
+          >
+            <span class="text-2xl font-bold text-purple-600">3</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Get AI Insights</h3>
+          <p class="text-gray-600">
+            Receive personalized feedback and suggestions to improve your
+            practice routine and jazz skills.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-6 bg-gray-50">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-8">About JazzPracticePro</h2>
+        <p class="text-lg text-gray-600 mb-8">
+          JazzPracticePro was created by a jazz musicians, for jazz
+          musicians.<br />
+          This is the app I always wanted to clearly see what I'd been working
+          on over the days, weeks and months, and use this to refine my
+          understanding of what was working and what wasn't working. <br />
+          Learning this music and how to improvise freely presents a number of
+          unique challenges and the idea of this tool is to be a comprehensive
+          journal to track development, from developing technique to building a
+          solid repertoire, to developing improvisational skills. The app
+          provides the structure and insights you need to make consistent
+          progress in your jazz journey.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          <div class="bg-white rounded-lg p-6 shadow-lg">
+            <h3 class="text-xl font-semibold mb-3">For Students</h3>
+            <p class="text-gray-600">
+              Track your progress, build your repertoire systematically, and get
+              feedback to accelerate your learning. Input information from your
+              lessons and use the AI to remind you of learnings and keep them in
+              your practice.
+            </p>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-lg">
+            <h3 class="text-xl font-semibold mb-3">
+              For Experienced Musicians
+            </h3>
+            <p class="text-gray-600">
+              Help stay organized and motivated with structured practice
+              tracking and goal setting. Keep track of your repertoire and make
+              sure all those tunes you've worked on are still in your head when
+              you need them.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-6 gradient-bg text-white text-center">
+      <h2 class="text-3xl font-bold mb-4">
+        Ready to Transform Your Jazz Practice?
+      </h2>
+      <p class="text-xl mb-8 opacity-90">
+        Be one of the first jazz musicians to use JazzPracticePro to track your
+        development and start improving today.
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <img
+                src="/JazzPracticePro_logo_large.png"
+                alt="JazzPracticePro"
+                class="h-8 w-auto"
+              />
+              <span class="ml-2 text-xl font-bold">JazzPracticePro</span>
+            </div>
+            <p class="text-gray-300 text-sm">
+              A simple, structured practice journal for jazz musicians.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Product</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>
+                <a href="#features" class="hover:text-white transition-colors"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="#demo" class="hover:text-white transition-colors"
+                  >Demo</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://app.jazzpracticepro.com"
+                  class="hover:text-white transition-colors"
+                  >Launch App</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Support</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>
+                <a
+                  href="mailto:contact@jazzpracticepro.com"
+                  class="hover:text-white transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Connect</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Twitter</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Instagram</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >YouTube</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-300"
+        >
+          © 2025 JazzPracticePro. Built with 🎶 + ❤️ for jazz musicians
+          everywhere.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile menu script -->
+    <script>
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
