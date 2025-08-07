@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy - JazzPracticePro</title>
+    <meta
+      name="description"
+      content="Learn how JazzPracticePro protects your privacy and handles your data when using AI features."
+    />
+    <meta name="author" content="JazzPracticePro" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "brand-primary": "#7c3aed",
+              "brand-secondary": "#8b5cf6",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+
+    <style>
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .privacy-content h2 {
+        scroll-margin-top: 100px;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center">
+            <a href="/" class="flex items-center">
+              <img
+                src="/JazzPracticePro_logo_large.png"
+                alt="JazzPracticePro"
+                class="h-8 w-auto"
+              />
+              <span class="ml-2 text-xl font-bold text-gray-800"
+                >JazzPracticePro</span
+              >
+            </a>
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="/"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >Home</a
+            >
+            <a
+              href="/#features"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >Features</a
+            >
+            <a
+              href="/#demo"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >Demo</a
+            >
+            <a
+              href="/#about"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >About</a
+            >
+          </div>
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-600 hover:text-purple-600"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+          <a href="/" class="block py-2 text-gray-600 hover:text-purple-600"
+            >Home</a
+          >
+          <a
+            href="/#features"
+            class="block py-2 text-gray-600 hover:text-purple-600"
+            >Features</a
+          >
+          <a
+            href="/#demo"
+            class="block py-2 text-gray-600 hover:text-purple-600"
+            >Demo</a
+          >
+          <a
+            href="/#about"
+            class="block py-2 text-gray-600 hover:text-purple-600"
+            >About</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-purple-50 to-blue-50 py-16">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          🔐 AI Privacy and Data Usage
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          JazzPracticePro includes optional AI-powered features to help you
+          reflect, plan, and stay inspired. This page explains how your data is
+          used when interacting with AI tools like practice reviews and daily
+          suggestions.
+        </p>
+      </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <section class="py-8 bg-white border-b">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="bg-gray-50 rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4 text-gray-800">
+            Quick Navigation
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <a
+              href="#privacy-approach"
+              class="text-purple-600 hover:text-purple-800 transition-colors"
+              >🧠 Privacy Approach</a
+            >
+            <a
+              href="#ai-powered-by"
+              class="text-purple-600 hover:text-purple-800 transition-colors"
+              >🤖 What Powers the AI</a
+            >
+            <a
+              href="#data-sent"
+              class="text-purple-600 hover:text-purple-800 transition-colors"
+              >📤 What Data is Sent</a
+            >
+            <a
+              href="#how-sent"
+              class="text-purple-600 hover:text-purple-800 transition-colors"
+              >🔐 How is it Sent</a
+            >
+            <a
+              href="#google-data"
+              class="text-purple-600 hover:text-purple-800 transition-colors"
+              >🚨 Does Google Keep My Data</a
+            >
+            <a
+              href="#summary"
+              class="text-purple-600 hover:text-purple-800 transition-colors"
+              >✅ Quick Summary</a
+            >
+            <a
+              href="#control"
+              class="text-purple-600 hover:text-purple-800 transition-colors"
+              >📁 Your Control & Portability</a
+            >
+            <a
+              href="#questions"
+              class="text-purple-600 hover:text-purple-800 transition-colors"
+              >❓ Questions</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-12">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="privacy-content prose prose-lg max-w-none">
+          <!-- Privacy Approach -->
+          <section id="privacy-approach" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              🧠 About JazzPracticePro's Privacy Approach
+            </h2>
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-6 mb-6">
+              <p class="text-blue-800 font-medium">
+                JazzPracticePro is a <strong>local-first</strong>,
+                privacy-respecting practice app. We do
+                <strong>not collect or store your data</strong> on any servers —
+                everything remains securely on your device.
+              </p>
+            </div>
+            <p class="text-gray-700 mb-4">
+              The AI features are optional. If you don't use them,
+              <strong>no data ever leaves your device</strong>.
+            </p>
+          </section>
+
+          <!-- AI Powered By -->
+          <section id="ai-powered-by" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              🤖 What powers the AI?
+            </h2>
+            <p class="text-gray-700 mb-4">
+              JazzPracticePro uses <strong>Google's Gemini API</strong> (via
+              <code class="bg-gray-100 px-2 py-1 rounded"
+                >@google/generative-ai</code
+              >) to provide personalized practice feedback and suggestions. When
+              you request AI help, your practice data is securely sent to Gemini
+              to generate a response — <strong>only from your device</strong>.
+            </p>
+          </section>
+
+          <!-- What Data is Sent -->
+          <section id="data-sent" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              📤 What data is sent?
+            </h2>
+            <p class="text-gray-700 mb-4">
+              Only the information needed for your request is included:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+              <li>
+                Your profile and goals (these are relevant to most prompts)
+              </li>
+              <li>
+                No personally identifiable information is included unless you
+                write it into a practice note or goal field.
+              </li>
+              <li>Practice activity summaries (dates, durations, notes)</li>
+              <li>
+                Repertoire info with learning statuses (tunes marked as "In
+                Progress", "Needs Review", etc.)
+              </li>
+              <li>Short- and long-term goals</li>
+              <li>Instrument info (for context)</li>
+              <li>Focus area or time available (for daily suggestions)</li>
+            </ul>
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6">
+              <p class="text-yellow-800">
+                <strong
+                  >JazzPracticePro never sends your full data unless you
+                  explicitly request AI feedback.</strong
+                >
+                You can review what's included by visiting your Goals and
+                Activities pages.
+              </p>
+            </div>
+          </section>
+
+          <!-- How is it Sent -->
+          <section id="how-sent" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              🔐 How is it sent?
+            </h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+              <li>
+                All AI requests are sent
+                <strong>directly from your device</strong> to Google's Gemini
+                API.
+              </li>
+              <li>
+                The Gemini API key is securely embedded at build time and
+                <strong>not exposed in the app code</strong>.
+              </li>
+              <li>
+                Key usage is limited by Google to only the Gemini API and
+                monitored locally.
+              </li>
+              <li>
+                No data is sent unless you click a "Generate AI Feedback"
+                button.
+              </li>
+            </ul>
+            <p class="text-gray-700 mb-4">
+              You always have full control over when data is sent. You'll see:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+              <li>
+                A <strong>banner</strong> on all AI pages reminding you that
+                data will be shared with Gemini
+              </li>
+              <li>
+                A <strong>"Generate" button</strong> you must click to initiate
+                the request
+              </li>
+              <li>
+                <strong>Fallback/error handling</strong> if the Gemini API is
+                unavailable or blocked
+              </li>
+            </ul>
+          </section>
+
+          <!-- Does Google Keep My Data -->
+          <section id="google-data" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              🚨 Does Google keep my data?
+            </h2>
+            <p class="text-gray-700 mb-4">
+              <strong>Possibly, for a short time.</strong>
+            </p>
+            <p class="text-gray-700 mb-4">
+              According to Google's
+              <a
+                href="https://cloud.google.com/terms/generative-ai"
+                class="text-purple-600 hover:text-purple-800 underline"
+                >Gemini API Terms of Service</a
+              >, prompts and responses
+              <strong>may be temporarily stored</strong> by Google for:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+              <li>Abuse prevention</li>
+              <li>Improving their models (in anonymized form)</li>
+            </ul>
+            <div class="bg-green-50 border-l-4 border-green-400 p-6">
+              <p class="text-green-800">
+                If you prefer not to share your data with Gemini, simply avoid
+                using the AI features — JazzPracticePro works fully without
+                them.
+              </p>
+            </div>
+            <p class="text-gray-700 mt-4">
+              JazzPracticePro does not store or log any prompts or responses
+              locally after generation. You can optionally choose to save your
+              AI results to a file or copy them manually.
+            </p>
+          </section>
+
+          <!-- Quick Summary -->
+          <section id="summary" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              ✅ Quick Summary
+            </h2>
+            <div class="overflow-x-auto">
+              <table class="w-full border-collapse border border-gray-300">
+                <thead>
+                  <tr class="bg-gray-50">
+                    <th
+                      class="border border-gray-300 px-4 py-3 text-left font-semibold"
+                    >
+                      Feature
+                    </th>
+                    <th
+                      class="border border-gray-300 px-4 py-3 text-left font-semibold"
+                    >
+                      Privacy Detail
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-3 font-medium">
+                      AI use
+                    </td>
+                    <td class="border border-gray-300 px-4 py-3">Optional</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="border border-gray-300 px-4 py-3 font-medium">
+                      What's sent
+                    </td>
+                    <td class="border border-gray-300 px-4 py-3">
+                      Only summary info needed for feedback
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-3 font-medium">
+                      Stored by JazzPracticePro
+                    </td>
+                    <td class="border border-gray-300 px-4 py-3">
+                      No — all data stays on your device
+                    </td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="border border-gray-300 px-4 py-3 font-medium">
+                      Sent to Gemini
+                    </td>
+                    <td class="border border-gray-300 px-4 py-3">
+                      Only when you explicitly request AI feedback
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-3 font-medium">
+                      Kept by Google?
+                    </td>
+                    <td class="border border-gray-300 px-4 py-3">
+                      Possibly (short-term, anonymized, for abuse/model tuning)
+                    </td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="border border-gray-300 px-4 py-3 font-medium">
+                      API Key security
+                    </td>
+                    <td class="border border-gray-300 px-4 py-3">
+                      Injected at build time, never exposed directly
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-3 font-medium">
+                      Rate limits
+                    </td>
+                    <td class="border border-gray-300 px-4 py-3">
+                      Tracked locally, enforced by plan tier
+                    </td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="border border-gray-300 px-4 py-3 font-medium">
+                      Local-first architecture
+                    </td>
+                    <td class="border border-gray-300 px-4 py-3">
+                      Yes — no cloud sync or server storage
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Your Control & Portability -->
+          <section id="control" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              📁 Your Control & Portability
+            </h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+              <li>
+                You can <strong>export</strong> all your practice data,
+                repertoire, and goals at any time.
+              </li>
+              <li>
+                You can <strong>import</strong> previous data or example files.
+              </li>
+              <li>
+                The app includes a <strong>Soft Reset</strong> (clears practice
+                data) and <strong>Factory Reset</strong> (clears everything).
+              </li>
+              <li>
+                AI usage logs can be reset manually via the Debug tools in the
+                app.
+              </li>
+            </ul>
+          </section>
+
+          <!-- Questions -->
+          <section id="questions" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">❓ Questions?</h2>
+            <div class="bg-purple-50 border-l-4 border-purple-400 p-6">
+              <p class="text-purple-800 mb-4">
+                JazzPracticePro is a local-first tool with your privacy in mind.
+              </p>
+              <p class="text-purple-800">
+                Reach out any time:
+                <a
+                  href="mailto:contact@jazzpracticepro.com"
+                  class="underline hover:text-purple-900"
+                  >contact@jazzpracticepro.com</a
+                >
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <img
+                src="/JazzPracticePro_logo_large.png"
+                alt="JazzPracticePro"
+                class="h-8 w-auto"
+              />
+              <span class="ml-2 text-xl font-bold">JazzPracticePro</span>
+            </div>
+            <p class="text-gray-300 text-sm">
+              A simple, structured practice journal for jazz musicians.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Product</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>
+                <a href="/#features" class="hover:text-white transition-colors"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="/#demo" class="hover:text-white transition-colors"
+                  >Demo</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://app.jazzpracticepro.com"
+                  class="hover:text-white transition-colors"
+                  >Launch App</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Support</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>
+                <a
+                  href="mailto:contact@jazzpracticepro.com"
+                  class="hover:text-white transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/privacy.html"
+                  class="hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Connect</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Twitter</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Instagram</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >YouTube</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-300"
+        >
+          © 2025 JazzPracticePro. Built with 🎶 + ❤️ for jazz musicians
+          everywhere.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile menu script -->
+    <script>
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

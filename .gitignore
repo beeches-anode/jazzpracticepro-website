@@ -68,3 +68,5 @@ build/
 
 # Local development files
 .local 
+# Local Netlify folder
+.netlify
