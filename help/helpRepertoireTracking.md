@@ -48,17 +48,17 @@ Sorting helps you focus on the right material at the right time.
 
 ## Learning Status Options
 
-Each tune has a status reflecting its current level of mastery using the list below. The default learning spaced repetition intervals are also shown below. These can be changed in the Settings Page.
+Each tune has a status reflecting its current level of mastery. Default spaced‑repetition intervals (days) are listed below and can be changed in Settings.
 
-- **🧐 Initial Exploration** – Just listening or lightly experimenting (2-day interval)
-- **🛠 Under Development** – Actively practicing elements of the tune (3-day interval)
-- **🎵 Melody & Changes** – Melody and chord changes learned (5-day interval)
-- **🧠 Memorised** – The tune is memorized (8-day interval)
-- **😌 Can plan without thinking** – Can play freely without getting lost (13-day interval)
-- **🎤 Performance Ready** – Ready for performance (21-day interval)
-- **No Status** – No learning status set (no interval) - this is a default setting for tunes that are in the app, but have not been practised or used by the user.
+- **💭 Want to Learn** – Considering or planning to learn (1)
+- **🧐 Initial Exploration** – Listening or lightly experimenting (2)
+- **🛠 Under Development** – Actively practicing elements (3)
+- **🎵 Melody & Changes Learned** – Melody and chord changes learned (5)
+- **🧠 Memorised** – The tune is memorized (8)
+- **😌 Can play without thinking** – Can play freely without getting lost (13)
+- **🎤 Performance Ready** – Ready for performance (21)
 
-The intervals show how many days JazzPracticePro will wait before suggesting you practice the tune again. Higher mastery levels have longer intervals.
+The interval indicates when the tune becomes due again. Higher mastery leads to longer review intervals.
 
 ---
 
