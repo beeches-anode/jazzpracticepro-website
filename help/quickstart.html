@@ -59,8 +59,10 @@
     </nav>
 
     <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <h1 class="text-3xl font-bold mb-6">Quickstart</h1>
-      <article id="content" class="content prose max-w-none"></article>
+      <article id="content" class="prose prose-lg max-w-none">
+        <h1 class="text-3xl font-bold mb-6">Quickstart</h1>
+        <div id="markdown-content"></div>
+      </article>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -74,9 +76,9 @@
             mangle: false,
             headerIds: true,
           });
-          document.getElementById("content").innerHTML = html;
+          document.getElementById("markdown-content").innerHTML = html;
         } catch (error) {
-          document.getElementById("content").innerHTML =
+          document.getElementById("markdown-content").innerHTML =
             '<p class="text-red-600">Unable to load documentation. Please try again later.</p>';
           console.error(error);
         }
