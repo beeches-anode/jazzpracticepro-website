@@ -10,26 +10,93 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      .content a {
-        color: #7c3aed;
+      /* Simple typography for markdown - no plugin needed */
+      #markdown-content h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        margin-top: 1.5rem;
+        color: #111827;
       }
-      .content a:hover {
+      #markdown-content h1:first-child {
+        margin-top: 0;
+      }
+      #markdown-content h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        margin-top: 1.25rem;
+        color: #111827;
+      }
+      #markdown-content h3 {
+        font-size: 1.125rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        margin-top: 1rem;
+        color: #111827;
+      }
+      #markdown-content p {
+        margin-bottom: 1rem;
+        color: #374151;
+        line-height: 1.75;
+      }
+      #markdown-content ol {
+        list-style-type: decimal;
+        list-style-position: inside;
+        margin-bottom: 1rem;
+        counter-reset: list-counter;
+      }
+      #markdown-content ol li {
+        margin-bottom: 0.5rem;
+      }
+      #markdown-content ul {
+        list-style-type: disc;
+        list-style-position: inside;
+        margin-bottom: 1rem;
+      }
+      #markdown-content ul > li {
+        margin-bottom: 0.5rem;
+      }
+      #markdown-content ul ul {
+        margin-left: 1rem;
+        margin-top: 0.5rem;
+        list-style-type: circle;
+      }
+      #markdown-content li {
+        color: #374151;
+        line-height: 1.75;
+      }
+      #markdown-content li > ul {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      #markdown-content a {
+        color: #7c3aed;
         text-decoration: underline;
       }
-      .content img {
-        max-width: 100%;
-        height: auto;
+      #markdown-content a:hover {
+        color: #6d28d9;
       }
-      .content pre {
-        overflow: auto;
-        padding: 1rem;
-        background: #f3f4f6;
-        border-radius: 0.375rem;
+      #markdown-content em {
+        font-style: italic;
       }
-      .content code {
-        background: #f3f4f6;
+      #markdown-content code {
+        background-color: #f3f4f6;
         padding: 0.125rem 0.25rem;
         border-radius: 0.25rem;
+        font-size: 0.875rem;
+        font-family: monospace;
+      }
+      #markdown-content pre {
+        background-color: #f3f4f6;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        overflow-x: auto;
+        margin-bottom: 1rem;
+      }
+      #markdown-content pre code {
+        background-color: transparent;
+        padding: 0;
       }
     </style>
   </head>
@@ -59,10 +126,8 @@
     </nav>
 
     <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <article id="content" class="prose prose-lg max-w-none">
-        <h1 class="text-3xl font-bold mb-6">Quickstart</h1>
-        <div id="markdown-content"></div>
-      </article>
+      <h1 class="text-3xl font-bold mb-6">Quickstart</h1>
+      <div id="markdown-content"></div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
