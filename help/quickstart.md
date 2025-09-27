@@ -1,5 +1,3 @@
-# Quickstart
-
 Get up and running in minutes.
 
 1. Sign in and set up

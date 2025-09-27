@@ -1,4 +1,4 @@
-# Features Overview
+# Overview
 
 JazzPracticePro helps you track practice, build repertoire, analyze progress, and get AI‑powered inspiration.
 
