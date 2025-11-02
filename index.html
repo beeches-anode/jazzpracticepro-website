@@ -101,6 +101,11 @@
               >Features</a
             >
             <a
+              href="/blog/"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >Blog</a
+            >
+            <a
               href="#demo"
               class="text-gray-600 hover:text-purple-600 transition-colors"
               >Demo</a
@@ -138,6 +143,11 @@
             href="/help/features.html"
             class="block py-2 text-gray-600 hover:text-purple-600"
             >Features</a
+          >
+          <a
+            href="/blog/"
+            class="block py-2 text-gray-600 hover:text-purple-600"
+            >Blog</a
           >
           <a href="#demo" class="block py-2 text-gray-600 hover:text-purple-600"
             >Demo</a
@@ -388,6 +398,30 @@
       </p>
     </section>
 
+    <!-- Latest Blog Posts Section -->
+    <section class="py-16 px-6 bg-gray-50">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-3xl font-bold">Latest from the Blog</h2>
+          <a
+            href="/blog/"
+            class="text-purple-600 hover:text-purple-700 font-medium flex items-center"
+          >
+            View All Posts
+            <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+        <div id="recent-posts" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Posts will be populated dynamically -->
+          <div class="col-span-full text-center py-8 text-gray-600">
+            No blog posts yet. Check back soon!
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12 px-6">
       <div class="max-w-6xl mx-auto">
@@ -413,6 +447,11 @@
                   href="/help/features.html"
                   class="hover:text-white transition-colors"
                   >Features</a
+                >
+              </li>
+              <li>
+                <a href="/blog/" class="hover:text-white transition-colors"
+                  >Blog</a
                 >
               </li>
               <li>
@@ -507,6 +546,66 @@
           }
         });
       });
+
+      // Load recent blog posts
+      async function loadRecentPosts() {
+        const recentPostsContainer = document.getElementById("recent-posts");
+
+        try {
+          const response = await fetch("/blog/posts.json");
+          if (!response.ok) {
+            return; // Silently fail if posts.json doesn't exist or errors
+          }
+
+          const data = await response.json();
+          const posts = data.posts
+            .filter((p) => p.status === "published")
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+            .slice(0, 3); // Get 3 most recent posts
+
+          if (posts.length === 0) {
+            return; // Keep default "no posts" message
+          }
+
+          const postsHTML = posts
+            .map((post) => {
+              const postUrl = `/blog/posts/${post.date}-${post.slug}.html`;
+              return `
+                <a href="${postUrl}" class="group">
+                  <div class="bg-white border rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img
+                      src="${post.heroImage}"
+                      alt="${post.title}"
+                      class="w-full h-48 object-cover"
+                      loading="lazy"
+                    />
+                    <div class="p-6">
+                      <h3 class="text-xl font-bold mb-2 group-hover:text-purple-600 transition-colors">
+                        ${post.title}
+                      </h3>
+                      <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+                        ${post.excerpt}
+                      </p>
+                      <div class="flex items-center justify-between text-sm text-gray-500">
+                        <span>${post.date}</span>
+                        <span>${post.readTime}</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              `;
+            })
+            .join("");
+
+          recentPostsContainer.innerHTML = postsHTML;
+        } catch (error) {
+          console.error("Error loading recent posts:", error);
+          // Silently fail - keep default "no posts" message
+        }
+      }
+
+      // Load recent posts on page load
+      loadRecentPosts();
     </script>
   </body>
 </html>

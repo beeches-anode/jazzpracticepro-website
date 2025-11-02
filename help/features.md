@@ -1,31 +1,60 @@
-# Overview
+JazzPracticePro helps jazz musicians track practice, build repertoire, analyze progress, and get AI-powered insights.
 
-JazzPracticePro helps you track practice, build repertoire, analyze progress, and get AI‑powered inspiration.
+## Core Features
 
-## Core Modules
+- **Customizable Practice Tracking**
+  - Log individual practice sessions across 30 customizable practice pillars (2 system-locked + 28 custom)
+  - Choose from 21 pedagogically-grounded templates or create your own categories
+  - Per-instrument pillar visibility for multi-instrumentalists
+  - Voice import: speak practice details and have them automatically structured by AI
 
-- Repertoire Tracking
-  - Track tunes with learning statuses and spaced‑repetition due dates
-  - Edit details and notes; see momentum and practice history
-- Practice Tracking (Activities)
-  - Log individual, ensemble, gigs, lessons, and listening ideas
-  - Use the 7 Pillars to structure entries: sound, technique, vocabulary, time & rhythm, repertoire, transcription, ensemble tunes
-- Statistics
-  - Streaks, totals, distributions, and momentum; expanded ranges for premium users
-- Transcriptions
-  - Add/edit transcription references and link them to practice entries; include YouTube metadata
-- AI Feedback
-  - Get weekly reviews, plans, and practice suggestions using a hybrid client‑server design
-- Backup & Restore
-  - Export/import local v3 backups; optional end‑to‑end encrypted cloud backup
-- Settings
-  - Configure repetition intervals; manage passphrase; factory reset and debug tools
+- **Repertoire Management**
+  - Track tunes from a curated database of 525+ jazz standards
+  - View detailed tune information (composer, form, key, tempo, style)
+  - Fuzzy search for quick lookup
+  - See practice history and momentum for each tune
+  - Rebuild repertoire list from session history
+
+- **AI-Powered Features**
+  - Get personalized practice feedback based on your session data
+  - Voice-to-structured practice import (5-10x faster logging)
+  - Context-aware parsing using your practice history
+  - Hybrid client-server architecture with streaming responses
+
+- **Statistics & Progress**
+  - Track practice streaks and total counts
+  - 30-day and all-time insights (premium feature)
+  - Repertoire momentum tracking (7/30/90 day views)
+  - Visual analytics of practice patterns
+
+- **Transcription Management**
+  - Track transcription projects with notes and progress
+  - YouTube metadata integration (automatic title, channel, thumbnail)
+  - Link transcriptions to practice sessions
+
+- **Backup & Data Management**
+  - Export/import local JSON backups (v3 format)
+  - End-to-end encrypted cloud backup with passphrase
+  - Full data portability and ownership
+  - Factory reset and soft reset options
+
+- **Authentication & Premium Access**
+  - Email + One-Time Password (OTP) authentication via Supabase
+  - Free tier with basic features
+  - Premium tier with enhanced statistics and AI credits
+  - Cross-tab authentication synchronization
+
+## Platform
+
+- Progressive Web App (PWA) - works across desktop, tablet, and mobile
+- Offline-first architecture - full functionality without internet
+- Responsive design optimized for all screen sizes
+- Installable to home screen on mobile devices
 
 ## Learn More
 
-- Quickstart: quick steps to first session, backup, and AI
-- AI Feedback: how hybrid AI and credits work
-- Backup: local v3 and encrypted cloud options
-- Privacy: local‑first design and third‑party services
+- **Quickstart**: Quick steps to first session, backup, and AI
+- **Privacy**: Local-first design, AI privacy, and data security
+- **Documentation**: Complete feature docs in product specification
 
-_This page summarizes current product capabilities reflected in the app._
+_Last updated: 2025-11-02 | This page reflects current production capabilities._

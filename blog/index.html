@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | JazzPracticePro - Jazz Practice Tips & Insights</title>
+    <meta
+      name="description"
+      content="Learn about jazz practice methods, spaced repetition, AI feedback, and more. Expert tips and insights for jazz musicians looking to improve their practice routine."
+    />
+    <meta
+      name="keywords"
+      content="jazz practice, music practice blog, jazz tips, practice methods, spaced repetition, jazz education"
+    />
+    <meta name="author" content="JazzPracticePro" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jazzpracticepro.com/blog/" />
+    <meta
+      property="og:title"
+      content="Blog | JazzPracticePro - Jazz Practice Tips & Insights"
+    />
+    <meta
+      property="og:description"
+      content="Learn about jazz practice methods, spaced repetition, AI feedback, and more. Expert tips for jazz musicians."
+    />
+    <meta
+      property="og:image"
+      content="https://jazzpracticepro.com/JazzPracticePro_logo_large.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://jazzpracticepro.com/blog/" />
+    <meta
+      property="twitter:title"
+      content="Blog | JazzPracticePro - Jazz Practice Tips & Insights"
+    />
+    <meta
+      property="twitter:description"
+      content="Learn about jazz practice methods, spaced repetition, AI feedback, and more."
+    />
+    <meta
+      property="twitter:image"
+      content="https://jazzpracticepro.com/JazzPracticePro_logo_large.png"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "brand-primary": "#7c3aed",
+              "brand-secondary": "#8b5cf6",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+
+    <!-- Fuse.js for search -->
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+    <style>
+      .feature-card:hover {
+        transform: translateY(-2px);
+        transition: transform 0.2s ease-in-out;
+      }
+      .blog-card {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      }
+      .blog-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      .tag {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background-color: #f3f4f6;
+        color: #4b5563;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        margin: 0.25rem;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      .tag:hover {
+        background-color: #e5e7eb;
+      }
+      .tag.active {
+        background-color: #7c3aed;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center">
+            <a href="/">
+              <img
+                src="/JazzPracticePro_logo_large.png"
+                alt="JazzPracticePro"
+                class="h-8 w-auto"
+              />
+            </a>
+            <a href="/" class="ml-2 text-xl font-bold text-gray-800"
+              >JazzPracticePro</a
+            >
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="/help/features.html"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >Features</a
+            >
+            <a
+              href="/blog/"
+              class="text-purple-600 font-semibold transition-colors"
+              >Blog</a
+            >
+            <a
+              href="/#demo"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >Demo</a
+            >
+            <a
+              href="/help/quickstart.html"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >Quickstart</a
+            >
+          </div>
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-600 hover:text-purple-600"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+          <a
+            href="/help/features.html"
+            class="block py-2 text-gray-600 hover:text-purple-600"
+            >Features</a
+          >
+          <a href="/blog/" class="block py-2 text-purple-600 font-semibold"
+            >Blog</a
+          >
+          <a
+            href="/#demo"
+            class="block py-2 text-gray-600 hover:text-purple-600"
+            >Demo</a
+          >
+          <a
+            href="/help/quickstart.html"
+            class="block py-2 text-gray-600 hover:text-purple-600"
+            >Quickstart</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-purple-50 to-blue-50 py-16 px-4">
+      <div class="max-w-6xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          JazzPracticePro <span class="text-purple-600">Blog</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+          Expert tips, practice methods, and insights to help you master jazz.
+          Learn about spaced repetition, AI-powered feedback, and effective
+          practice techniques.
+        </p>
+        <div class="mt-6">
+          <a
+            href="/blog/feed.xml"
+            class="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium"
+          >
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M5 3a1 1 0 000 2c5.523 0 10 4.477 10 10a1 1 0 102 0C17 8.373 11.627 3 5 3z"
+              ></path>
+              <path
+                d="M4 9a1 1 0 011-1 7 7 0 017 7 1 1 0 11-2 0 5 5 0 00-5-5 1 1 0 01-1-1zM3 15a2 2 0 114 0 2 2 0 01-4 0z"
+              ></path>
+            </svg>
+            Subscribe via RSS
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="py-8 px-4 bg-white border-b">
+      <div class="max-w-6xl mx-auto">
+        <!-- Search Bar -->
+        <div class="mb-6">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search posts..."
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          />
+        </div>
+
+        <!-- Tag Filter -->
+        <div id="tag-filter" class="flex flex-wrap items-center gap-2">
+          <span class="text-gray-600 font-medium mr-2">Filter by tag:</span>
+          <!-- Tags will be populated dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="py-16 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div
+          id="blog-posts"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <!-- Posts will be populated dynamically -->
+          <div id="empty-state" class="col-span-full text-center py-16">
+            <div class="text-6xl mb-4">📝</div>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-2">
+              No blog posts yet
+            </h2>
+            <p class="text-gray-600">
+              Check back soon for expert tips and insights on jazz practice!
+            </p>
+          </div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading-state" class="hidden col-span-full text-center py-16">
+          <div class="text-4xl mb-4">⏳</div>
+          <p class="text-gray-600">Loading posts...</p>
+        </div>
+
+        <!-- Error State -->
+        <div
+          id="error-state"
+          class="hidden col-span-full text-center py-16 bg-red-50 rounded-lg p-8"
+        >
+          <div class="text-4xl mb-4">⚠️</div>
+          <h2 class="text-xl font-semibold text-red-800 mb-2">
+            Error Loading Posts
+          </h2>
+          <p class="text-red-600">
+            We couldn't load the blog posts. Please try again later.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <img
+                src="/JazzPracticePro_logo_large.png"
+                alt="JazzPracticePro"
+                class="h-8 w-auto"
+              />
+              <span class="ml-2 text-xl font-bold">JazzPracticePro</span>
+            </div>
+            <p class="text-gray-300 text-sm">
+              A simple, structured practice journal for jazz musicians.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Product</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>
+                <a
+                  href="/help/features.html"
+                  class="hover:text-white transition-colors"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="/blog/" class="hover:text-white transition-colors"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a href="/#demo" class="hover:text-white transition-colors"
+                  >Demo</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://jazzpracticepro.app"
+                  class="hover:text-white transition-colors"
+                  >Launch App</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/help/quickstart.html"
+                  class="hover:text-white transition-colors"
+                  >Quickstart</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Support</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>
+                <a
+                  href="mailto:contact@jazzpracticepro.com"
+                  class="hover:text-white transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/privacy.html"
+                  class="hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Connect</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Twitter</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Instagram</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >YouTube</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-300"
+        >
+          © 2025 JazzPracticePro. Built with 🎶 + ❤️ for jazz musicians
+          everywhere.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Blog posts functionality
+      let allPosts = [];
+      let filteredPosts = [];
+      let selectedTag = null;
+      let fuse = null;
+
+      // Load blog posts
+      async function loadBlogPosts() {
+        const blogPostsContainer = document.getElementById("blog-posts");
+        const emptyState = document.getElementById("empty-state");
+        const loadingState = document.getElementById("loading-state");
+        const errorState = document.getElementById("error-state");
+
+        // Show loading state
+        emptyState.classList.add("hidden");
+        loadingState.classList.remove("hidden");
+        errorState.classList.add("hidden");
+
+        try {
+          const response = await fetch("/blog/posts.json");
+          if (!response.ok) {
+            throw new Error("Failed to fetch posts");
+          }
+
+          const data = await response.json();
+          allPosts = data.posts
+            .filter((p) => p.status === "published")
+            .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+          filteredPosts = [...allPosts];
+
+          // Initialize Fuse.js for search
+          fuse = new Fuse(allPosts, {
+            keys: ["title", "excerpt", "tags"],
+            threshold: 0.3,
+          });
+
+          // Hide loading state
+          loadingState.classList.add("hidden");
+
+          if (allPosts.length === 0) {
+            emptyState.classList.remove("hidden");
+          } else {
+            renderPosts(filteredPosts);
+            renderTagFilter();
+          }
+        } catch (error) {
+          console.error("Error loading blog posts:", error);
+          loadingState.classList.add("hidden");
+          errorState.classList.remove("hidden");
+        }
+      }
+
+      // Render posts
+      function renderPosts(posts) {
+        const blogPostsContainer = document.getElementById("blog-posts");
+        const emptyState = document.getElementById("empty-state");
+
+        if (posts.length === 0) {
+          blogPostsContainer.innerHTML = "";
+          emptyState.classList.remove("hidden");
+          emptyState.querySelector("h2").textContent = "No posts found";
+          emptyState.querySelector("p").textContent =
+            "Try adjusting your search or filter.";
+          return;
+        }
+
+        emptyState.classList.add("hidden");
+
+        const postsHTML = posts
+          .map((post) => {
+            const postUrl = `/blog/posts/${post.date}-${post.slug}.html`;
+            const tagsHTML = post.tags
+              .map((tag) => `<span class="tag">${tag}</span>`)
+              .join("");
+
+            return `
+            <article class="blog-card bg-white border rounded-lg shadow-lg overflow-hidden">
+              <a href="${postUrl}">
+                <img
+                  src="${post.heroImage}"
+                  alt="${post.title}"
+                  class="w-full h-48 object-cover"
+                  loading="lazy"
+                />
+              </a>
+              <div class="p-6">
+                <div class="mb-3">
+                  ${tagsHTML}
+                </div>
+                <h2 class="text-2xl font-bold mb-3">
+                  <a
+                    href="${postUrl}"
+                    class="hover:text-purple-600 transition-colors"
+                  >
+                    ${post.title}
+                  </a>
+                </h2>
+                <p class="text-gray-600 mb-4">${post.excerpt}</p>
+                <div class="flex items-center justify-between text-sm text-gray-500">
+                  <span>${post.date}</span>
+                  <span>${post.readTime}</span>
+                </div>
+              </div>
+            </article>
+          `;
+          })
+          .join("");
+
+        blogPostsContainer.innerHTML = postsHTML;
+      }
+
+      // Render tag filter
+      function renderTagFilter() {
+        const tagFilterContainer = document.getElementById("tag-filter");
+
+        // Get all unique tags
+        const allTags = [...new Set(allPosts.flatMap((post) => post.tags))].sort();
+
+        const tagsHTML = allTags
+          .map(
+            (tag) =>
+              `<span class="tag" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag}</span>`
+          )
+          .join("");
+
+        tagFilterContainer.innerHTML = `
+          <span class="text-gray-600 font-medium mr-2">Filter by tag:</span>
+          <span class="tag ${!selectedTag ? "active" : ""}" onclick="clearTagFilter()">All</span>
+          ${tagsHTML}
+        `;
+      }
+
+      // Filter by tag
+      function filterByTag(tag) {
+        selectedTag = tag;
+        applyFilters();
+
+        // Update tag UI
+        document.querySelectorAll(".tag").forEach((t) => {
+          if (t.getAttribute("data-tag") === tag) {
+            t.classList.add("active");
+          } else {
+            t.classList.remove("active");
+          }
+        });
+      }
+
+      // Clear tag filter
+      function clearTagFilter() {
+        selectedTag = null;
+        applyFilters();
+
+        // Update tag UI
+        document.querySelectorAll(".tag").forEach((t) => {
+          t.classList.remove("active");
+        });
+        document
+          .querySelector('.tag[onclick="clearTagFilter()"]')
+          .classList.add("active");
+      }
+
+      // Apply filters
+      function applyFilters() {
+        const searchQuery = document.getElementById("search-input").value.trim();
+
+        let posts = [...allPosts];
+
+        // Apply tag filter
+        if (selectedTag) {
+          posts = posts.filter((post) => post.tags.includes(selectedTag));
+        }
+
+        // Apply search filter
+        if (searchQuery && fuse) {
+          const searchResults = fuse.search(searchQuery);
+          const searchPostIds = searchResults.map((result) => result.item.id);
+          posts = posts.filter((post) => searchPostIds.includes(post.id));
+        }
+
+        filteredPosts = posts;
+        renderPosts(filteredPosts);
+      }
+
+      // Search input handler
+      document.getElementById("search-input").addEventListener("input", () => {
+        applyFilters();
+      });
+
+      // Load posts on page load
+      loadBlogPosts();
+    </script>
+  </body>
+</html>

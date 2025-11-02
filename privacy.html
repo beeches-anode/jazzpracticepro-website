@@ -209,19 +209,24 @@
               <p class="text-blue-800 font-medium">
                 JazzPracticePro is a <strong>local-first</strong>,
                 privacy-respecting practice app. We do
-                <strong>not collect or store your data</strong> on any servers —
-                everything remains securely on your device.
+                <strong>not collect or store your practice data</strong> on any servers —
+                everything remains securely on your device in your browser's local database.
               </p>
             </div>
             <p class="text-gray-700 mb-4">
               The AI features are optional. If you don't use them,
-              <strong>no data ever leaves your device</strong>. When you do use
+              <strong>no practice data ever leaves your device</strong>. When you do use
               AI, JazzPracticePro uses a
               <strong>hybrid client–server design</strong> to balance
               performance and privacy: your device streams results directly from
-              Google's Gemini while small, <em>non-content</em> control requests
-              are made to our serverless endpoints only to manage AI credits and
-              safety.
+              Google's Gemini API (or via our secure Cloud Run proxy) while small,
+              <em>non-content</em> control requests are made to our serverless
+              endpoints only to manage AI credits and safety checks.
+            </p>
+            <p class="text-gray-700 mb-4">
+              <strong>Optional cloud backup</strong>: You can enable end-to-end
+              encrypted cloud backup. Your passphrase never leaves your device,
+              and your data is encrypted before upload. We cannot decrypt your backups.
             </p>
           </section>
 
@@ -231,14 +236,21 @@
               🤖 What powers the AI?
             </h2>
             <p class="text-gray-700 mb-4">
-              JazzPracticePro uses <strong>Google's Gemini API</strong> (via
+              JazzPracticePro uses <strong>Google's Gemini 1.5 Flash API</strong> (via
               <code class="bg-gray-100 px-2 py-1 rounded"
                 >@google/generative-ai</code
-              >) to provide personalized practice feedback and suggestions. When
-              you request AI help, your practice data is securely sent to Gemini
+              >) to provide two AI-powered features:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+              <li><strong>Practice Feedback</strong>: Personalized insights based on your recent practice patterns</li>
+              <li><strong>Voice Import</strong>: Speak practice details and have them automatically structured into pillar entries (5-10x faster logging)</li>
+            </ul>
+            <p class="text-gray-700 mb-4">
+              When you request AI help, your practice data is securely sent to Gemini
               to generate a response. In <strong>hybrid mode</strong>,
-              generation is streamed <em>directly from your device</em> while
-              credits are enforced on the server for fairness.
+              generation is streamed <em>directly from your device</em> (or via our
+              secure Google Cloud Run proxy) while credits are enforced on the server
+              for fairness and security.
             </p>
           </section>
 
@@ -250,32 +262,35 @@
             <p class="text-gray-700 mb-4">
               Only the information needed for your request is included:
             </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">For AI Practice Feedback:</h3>
             <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
-              <li>
-                Your profile and goals (these are relevant to most prompts)
-              </li>
-              <li>
-                No personally identifiable information is included unless you
-                write it into a practice note or goal field.
-              </li>
-              <li>Practice activity summaries (dates, durations, notes)</li>
-              <li>
-                Repertoire info with learning statuses (tunes marked as "In
-                Progress", "Needs Review", etc.)
-              </li>
-              <li>Short- and long-term goals</li>
-              <li>Instrument info (for context)</li>
-              <li>Focus area or time available (for daily suggestions)</li>
+              <li>Your profile information (instrument, experience context)</li>
+              <li>Practice session summaries from the last 30 days (dates, durations, pillar categories, exercise descriptions)</li>
+              <li>Repertoire information (tune names you've practiced)</li>
+              <li>Transcription project names (if applicable)</li>
+              <li>Active pillar definitions (names and descriptors)</li>
+              <li>Session notes (if you've added them)</li>
             </ul>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">For Voice Import:</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+              <li>The transcription of your spoken practice notes</li>
+              <li>Your last 8 practice sessions (for consistency in parsing)</li>
+              <li>Active pillar definitions</li>
+              <li>Your known tunes and transcriptions (for fuzzy matching)</li>
+            </ul>
+
             <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6">
-              <p class="text-yellow-800">
-                <strong
-                  >JazzPracticePro never sends your full data unless you
-                  explicitly request AI feedback.</strong
-                >
-                You can review what's included by visiting your Goals and
-                Activities pages.
+              <p class="text-yellow-800 mb-3">
+                <strong>Important privacy notes:</strong>
               </p>
+              <ul class="list-disc list-inside space-y-2 text-yellow-800">
+                <li>No personally identifiable information (name, email) is sent to Gemini AI</li>
+                <li>Data is only sent when you explicitly click "Generate AI Feedback" or "Voice Import"</li>
+                <li>Your authentication credentials and passphrase are NEVER sent to AI</li>
+                <li>Cloud backup data is encrypted before leaving your device and never sent to AI</li>
+              </ul>
             </div>
           </section>
 
@@ -284,43 +299,50 @@
             <h2 class="text-3xl font-bold text-gray-800 mb-6">
               🔐 How is it sent?
             </h2>
-            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
-              <li>
-                In <strong>hybrid mode</strong>, content generation streams
-                <strong>directly from your device</strong> to Google's Gemini
-                API for speed and responsiveness.
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">AI Request Flow (Hybrid Architecture):</h3>
+            <ol class="list-decimal list-inside space-y-2 text-gray-700 mb-6">
+              <li><strong>Pre-flight checks</strong>: Before any AI call, our serverless function checks:
+                <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+                  <li>Kill switch status (can disable AI system-wide if needed)</li>
+                  <li>Your current AI credit balance</li>
+                  <li>Reserves 1 credit for your request</li>
+                </ul>
               </li>
-              <li>
-                Before generation, a
-                <strong>kill switch and credit check</strong>
-                happens via secure serverless endpoints.
+              <li><strong>Token issuance</strong>: If using Cloud Run proxy, request a signed JWT token (120-second expiry)</li>
+              <li><strong>Content streaming</strong>: Your device streams content generation:
+                <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+                  <li><strong>Primary path</strong>: Via Google Cloud Run secure proxy (JWT-authenticated, rate-limited)</li>
+                  <li><strong>Fallback path</strong>: Direct to Gemini API if proxy unavailable</li>
+                </ul>
               </li>
-              <li>
-                After success or on failure,
-                <strong>usage is confirmed or refunded</strong> via serverless
-                functions — no practice content is stored by us.
+              <li><strong>Confirmation or refund</strong>:
+                <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+                  <li>On success: Usage confirmed via serverless function</li>
+                  <li>On failure: Credit automatically refunded</li>
+                  <li>No practice content is stored on our servers during this process</li>
+                </ul>
               </li>
-              <li>
-                No data is sent unless you click a "Generate AI Feedback"
-                button.
-              </li>
-            </ul>
+            </ol>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">User Control:</h3>
             <p class="text-gray-700 mb-4">
               You always have full control over when data is sent. You'll see:
             </p>
             <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
-              <li>
-                A <strong>banner</strong> on all AI pages reminding you that
-                data will be shared with Gemini
-              </li>
-              <li>
-                A <strong>"Generate" button</strong> you must click to initiate
-                the request
-              </li>
-              <li>
-                <strong>Fallback/error handling</strong> using our serverless
-                function if direct streaming fails (e.g., long generations)
-              </li>
+              <li>A <strong>banner</strong> on all AI pages reminding you that data will be shared with Gemini</li>
+              <li>A <strong>"Generate" button</strong> you must click to initiate the request</li>
+              <li><strong>Credit balance display</strong> so you know how many AI calls you have remaining</li>
+              <li><strong>Transparent error handling</strong> with automatic fallback if primary path fails</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Authentication & Cloud Backup:</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+              <li><strong>Authentication</strong>: Email + One-Time Password (OTP) via Supabase (no passwords stored)</li>
+              <li><strong>Session management</strong>: JWT tokens with automatic refresh, cross-tab synchronization</li>
+              <li><strong>Cloud backup encryption</strong>: Your passphrase derives an encryption key (PBKDF2-SHA256, 600k iterations)</li>
+              <li><strong>Backup storage</strong>: Encrypted blobs stored in Supabase Storage with Row Level Security</li>
+              <li><strong>Zero-knowledge</strong>: Your passphrase never leaves your device - we cannot decrypt your backups</li>
             </ul>
           </section>
 
@@ -424,15 +446,31 @@
                       AI architecture
                     </td>
                     <td class="border border-gray-300 px-4 py-3">
-                      Hybrid: client streaming + serverless credit enforcement
+                      Hybrid: client streaming (Cloud Run proxy or direct) + serverless credit enforcement
                     </td>
                   </tr>
                   <tr>
                     <td class="border border-gray-300 px-4 py-3 font-medium">
+                      AI features
+                    </td>
+                    <td class="border border-gray-300 px-4 py-3">
+                      Practice feedback + Voice import (both use Gemini 1.5 Flash)
+                    </td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="border border-gray-300 px-4 py-3 font-medium">
                       Credits / limits
                     </td>
                     <td class="border border-gray-300 px-4 py-3">
-                      Checked before use; confirmed/refunded via functions
+                      Checked before use; confirmed/refunded via serverless functions
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-3 font-medium">
+                      Authentication
+                    </td>
+                    <td class="border border-gray-300 px-4 py-3">
+                      Email + OTP (One-Time Password) via Supabase
                     </td>
                   </tr>
                   <tr class="bg-gray-50">
@@ -440,7 +478,15 @@
                       Local-first architecture
                     </td>
                     <td class="border border-gray-300 px-4 py-3">
-                      Yes — no cloud sync or server storage
+                      Yes — practice data stored on your device only
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-3 font-medium">
+                      Cloud backup (optional)
+                    </td>
+                    <td class="border border-gray-300 px-4 py-3">
+                      End-to-end encrypted (AES-GCM-256) with user passphrase
                     </td>
                   </tr>
                 </tbody>
@@ -459,16 +505,30 @@
               your device; backups are encrypted before upload and can only be
               decrypted by you.
             </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Technical Details:</h3>
             <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
-              <li>Encryption: PBKDF2‑SHA256 + AES‑GCM‑256</li>
-              <li>Compression: gzip before encryption to reduce size</li>
-              <li>Storage: Supabase Storage with per-user access controls</li>
-              <li>Passphrase scope: lives only in-memory per browser tab</li>
+              <li><strong>Encryption</strong>: PBKDF2-SHA256 key derivation (600,000 iterations) + AES-GCM-256 encryption</li>
+              <li><strong>Compression</strong>: gzip before encryption to reduce size</li>
+              <li><strong>Storage</strong>: Supabase Storage with Row Level Security (per-user access controls)</li>
+              <li><strong>Passphrase scope</strong>: Lives only in browser sessionStorage (cleared on sign-out)</li>
+              <li><strong>Zero-knowledge</strong>: Server stores only encrypted blobs, cannot decrypt without your passphrase</li>
             </ul>
-            <p class="text-gray-700">
-              You can also export/import a local <strong>v3 JSON</strong> backup
-              at any time without using cloud storage.
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Local Backup Alternative:</h3>
+            <p class="text-gray-700 mb-4">
+              You can also export/import a local <strong>JSON backup (v3 format, schema version 14)</strong>
+              at any time without using cloud storage or authentication. This gives you full control
+              over your data with no server involvement whatsoever.
             </p>
+
+            <div class="bg-green-50 border-l-4 border-green-400 p-6">
+              <p class="text-green-800">
+                <strong>Data ownership:</strong> You own your data completely. Export it anytime in
+                standard JSON format, delete it from the cloud, or factory reset your local data.
+                No lock-in.
+              </p>
+            </div>
           </section>
 
           <!-- AI Endpoints Transparency -->
@@ -479,26 +539,55 @@
             <p class="text-gray-700 mb-4">
               For fairness and safety, the app calls a small set of
               <strong>serverless endpoints</strong> that manage AI usage. These
-              do not store your content and are only used to check status,
+              do not store your practice content and are only used to check status,
               reserve, confirm, or refund credits:
             </p>
-            <ul class="list-disc list-inside space-y-2 text-gray-700">
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Netlify Serverless Functions:</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
               <li>
-                GET <code>/.netlify/functions/ai-status</code>: kill switch +
-                credits
+                <code class="bg-gray-100 px-2 py-1 rounded">GET /.netlify/functions/ai-status</code>:
+                Kill switch check + AI credit balance lookup
               </li>
               <li>
-                POST <code>/.netlify/functions/reserve-credit</code>: reserve a
-                credit
+                <code class="bg-gray-100 px-2 py-1 rounded">POST /.netlify/functions/reserve-credit</code>:
+                Reserve 1 credit before AI request (atomic transaction)
               </li>
               <li>
-                POST <code>/.netlify/functions/confirm-usage</code>: log success
+                <code class="bg-gray-100 px-2 py-1 rounded">POST /.netlify/functions/confirm-usage</code>:
+                Confirm credit usage after successful AI response
               </li>
               <li>
-                POST <code>/.netlify/functions/refund-credit</code>: refund on
-                failure
+                <code class="bg-gray-100 px-2 py-1 rounded">POST /.netlify/functions/refund-credit</code>:
+                Refund reserved credit if AI request fails
+              </li>
+              <li>
+                <code class="bg-gray-100 px-2 py-1 rounded">POST /.netlify/functions/issue-proxy-token</code>:
+                Issue signed JWT token for Cloud Run proxy authorization (120-second TTL)
+              </li>
+              <li>
+                <code class="bg-gray-100 px-2 py-1 rounded">POST /.netlify/functions/generateFeedback</code>:
+                Fallback server-side AI generation (used only if client-side streaming fails)
               </li>
             </ul>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Google Cloud Run Proxy:</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+              <li>
+                <code class="bg-gray-100 px-2 py-1 rounded">jpp-gemini-proxy</code>:
+                Optional secure streaming proxy to Gemini API
+              </li>
+              <li><strong>Authorization</strong>: JWT bearer token (issued by Netlify function)</li>
+              <li><strong>Security</strong>: Rate limiting, CORS protection, domain restrictions</li>
+              <li><strong>Purpose</strong>: Secure API key management without exposing keys to client</li>
+              <li><strong>Stateless</strong>: No logging of practice content, auto-scaling</li>
+            </ul>
+
+            <p class="text-gray-700 mb-4">
+              <strong>Important:</strong> None of these endpoints store your practice content.
+              They only handle credit accounting and access control. All practice data streaming
+              happens directly between your device and Gemini API (or via the stateless Cloud Run proxy).
+            </p>
           </section>
 
           <!-- Your Control & Portability -->
@@ -612,30 +701,27 @@
               </div>
             </div>
 
-            <!-- App Store Privacy Disclosure -->
+            <!-- Platform & Distribution -->
             <div class="mb-8">
               <h3 class="text-2xl font-semibold text-gray-800 mb-4">
-                📲 App Store Privacy Disclosure
+                📲 Platform & Distribution
               </h3>
               <p class="text-gray-700 mb-4">
-                In compliance with App Store policies, JazzPracticePro's App
-                Store Privacy Labels reflect that:
+                JazzPracticePro is a <strong>Progressive Web App (PWA)</strong> delivered
+                directly via web browsers. This means:
               </p>
               <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
-                <li>
-                  Data may be temporarily shared with a third party (Google
-                  Gemini) when using AI features
-                </li>
-                <li>
-                  This data may include user-generated content (notes, goals,
-                  etc.)
-                </li>
-                <li>The data is used only for app functionality purposes</li>
+                <li>No app store downloads required - access via jazzpracticepro.com</li>
+                <li>Installable to your home screen on mobile devices (iOS, Android)</li>
+                <li>Works across desktop, tablet, and mobile with consistent experience</li>
+                <li>No app store gatekeepers or 30% revenue sharing fees</li>
+                <li>Instant updates - no manual app updates needed</li>
               </ul>
-              <div class="bg-green-50 border-l-4 border-green-400 p-6">
-                <p class="text-green-800">
-                  If you choose not to use the AI features, no data is shared or
-                  collected externally at any time.
+              <div class="bg-blue-50 border-l-4 border-blue-400 p-6">
+                <p class="text-blue-800">
+                  <strong>Web-first approach:</strong> JazzPracticePro prioritizes web delivery
+                  for privacy, control, and user convenience. Your data stays on your device,
+                  and you're never locked into a platform-specific app ecosystem.
                 </p>
               </div>
             </div>
@@ -744,8 +830,9 @@
         <div
           class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-300"
         >
-          © 2025 JazzPracticePro. Built with 🎶 + ❤️ for jazz musicians
-          everywhere.
+          © 2025 JazzPracticePro. Built with 🎶 for jazz musicians everywhere.
+          <br />
+          Last updated: November 2, 2025
         </div>
       </div>
     </footer>
