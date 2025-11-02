@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Features — JazzPracticePro Help</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Simple typography for markdown - no plugin needed */
+      #markdown-content h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        margin-top: 1.5rem;
+        color: #111827;
+      }
+      #markdown-content h1:first-child {
+        margin-top: 0;
+      }
+      #markdown-content h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        margin-top: 1.25rem;
+        color: #111827;
+      }
+      #markdown-content h3 {
+        font-size: 1.125rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        margin-top: 1rem;
+        color: #111827;
+      }
+      #markdown-content p {
+        margin-bottom: 1rem;
+        color: #374151;
+        line-height: 1.75;
+      }
+      #markdown-content ul {
+        list-style-type: disc;
+        list-style-position: inside;
+        margin-bottom: 1rem;
+      }
+      #markdown-content ul > li {
+        margin-bottom: 0.5rem;
+      }
+      #markdown-content ul ul {
+        margin-left: 1rem;
+        margin-top: 0.5rem;
+        list-style-type: circle;
+      }
+      #markdown-content li {
+        color: #374151;
+        line-height: 1.75;
+      }
+      #markdown-content li > ul {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      #markdown-content a {
+        color: #7c3aed;
+        text-decoration: underline;
+      }
+      #markdown-content a:hover {
+        color: #6d28d9;
+      }
+      #markdown-content em {
+        font-style: italic;
+      }
+      #markdown-content code {
+        background-color: #f3f4f6;
+        padding: 0.125rem 0.25rem;
+        border-radius: 0.25rem;
+        font-size: 0.875rem;
+        font-family: monospace;
+      }
+      #markdown-content pre {
+        background-color: #f3f4f6;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        overflow-x: auto;
+        margin-bottom: 1rem;
+      }
+      #markdown-content pre code {
+        background-color: transparent;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800">
+    <nav class="bg-white shadow-sm border-b">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center">
+            <img
+              src="/JazzPracticePro_logo_large.png"
+              alt="JazzPracticePro"
+              class="h-8 w-auto"
+            />
+            <span class="ml-2 text-xl font-bold text-gray-800"
+              >JazzPracticePro</span
+            >
+          </div>
+          <div>
+            <a
+              href="/"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >Home</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <h1 class="text-3xl font-bold mb-6">Features</h1>
+      <div id="markdown-content"></div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+      (async function loadMarkdown() {
+        try {
+          const response = await fetch("features.md", { cache: "no-cache" });
+          if (!response.ok) throw new Error("Failed to load features.md");
+          const markdown = await response.text();
+          const html = marked.parse(markdown, {
+            mangle: false,
+            headerIds: true,
+          });
+          document.getElementById("markdown-content").innerHTML = html;
+        } catch (error) {
+          document.getElementById("markdown-content").innerHTML =
+            '<p class="text-red-600">Unable to load documentation. Please try again later.</p>';
+          // Optionally log error to console for local debugging
+          console.error(error);
+        }
+      })();
+    </script>
+  </body>
+</html>
