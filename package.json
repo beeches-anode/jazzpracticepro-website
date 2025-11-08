@@ -7,6 +7,8 @@
     "start": "python3 -m http.server 8000",
     "serve": "npx serve .",
     "dev": "python3 -m http.server 8000",
+    "build:css": "tailwindcss -i ./src/input.css -o ./styles.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./styles.css --watch",
     "test": "echo \"No tests specified\" && exit 0"
   },
   "keywords": [
@@ -29,7 +31,8 @@
   },
   "homepage": "https://jazzpracticepro.com",
   "devDependencies": {
-    "serve": "^14.2.1"
+    "serve": "^14.2.1",
+    "tailwindcss": "^3.4.18"
   },
   "engines": {
     "node": ">=14.0.0"

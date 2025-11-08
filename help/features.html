@@ -4,35 +4,90 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Features — JazzPracticePro Help</title>
+    <meta
+      name="description"
+      content="Explore all JazzPracticePro features: customizable practice tracking, repertoire management, AI-powered feedback, statistics, and more. Free progressive web app for jazz musicians."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Features — JazzPracticePro Help" />
+    <meta
+      property="og:description"
+      content="Explore all JazzPracticePro features: customizable practice tracking, repertoire management, AI-powered feedback, statistics, and more."
+    />
+    <meta property="og:image" content="https://jazzpracticepro.com/JazzPracticePro_logo_large.png" />
+    <meta property="og:url" content="https://jazzpracticepro.com/help/features.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Features — JazzPracticePro Help" />
+    <meta
+      name="twitter:description"
+      content="Explore all JazzPracticePro features: customizable practice tracking, repertoire management, AI-powered feedback, statistics, and more."
+    />
+    <meta name="twitter:image" content="https://jazzpracticepro.com/JazzPracticePro_logo_large.png" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://jazzpracticepro.com/help/features.html" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#7c3aed" />
+
+    <!-- Schema.org for ItemList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "JazzPracticePro Features",
+      "description": "Complete list of features in JazzPracticePro practice journal app",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Customizable Practice Tracking",
+          "description": "Log practice sessions across 30 customizable practice pillars with voice import"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Repertoire Management",
+          "description": "Track 525+ jazz standards with spaced repetition scheduling"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI-Powered Features",
+          "description": "Get personalized practice feedback and voice-to-structured logging"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Statistics & Progress",
+          "description": "Track practice streaks, distributions, and repertoire momentum"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Transcription Management",
+          "description": "Track transcription projects with YouTube metadata integration"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Backup & Data Management",
+          "description": "Export/import local backups with end-to-end encrypted cloud backup"
+        }
+      ]
+    }
+    </script>
+
     <link rel="icon" type="image/png" sizes="32x32" href="/icon-192.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/icon-192.png" />
     <link rel="apple-touch-icon" href="/icon-192.png" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "brand-primary": "#7c3aed",
-              "brand-secondary": "#8b5cf6",
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      .gradient-bg {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      }
-      .feature-card {
-        transition: all 0.2s ease-in-out;
-      }
-      .feature-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 25px rgba(124, 58, 237, 0.2);
-      }
-    </style>
+    <!-- Tailwind CSS Production Build -->
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body class="bg-gray-50 text-gray-800">
     <!-- Navigation -->
