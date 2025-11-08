@@ -572,19 +572,19 @@ The 7 Pillars framework organizes jazz practice into seven focus areas:
 
 ### Phase 2: Content Creation (Weeks 2-3)
 
-**Goal:** Write and publish first 3 blog posts
+**Goal:** Write and publish first 3 foundationaal blog posts
 
 **Tasks:**
-1. **Post 1: "The 7 Pillars of Jazz Practice"**
-   - Research: Review `help/helpPillarsTheory.md` from app
+1. **Post 1: "Pillars as a Framework for Jazz Practice"**
+   - Research: Review `help/helpPillarsTheory.md` from app; review the different ways in which Jazz is taught
    - Outline: Introduction, each pillar explained, how to use, CTA
    - Write: 1,500-2,000 words
    - Images: Screenshot of pillars in app, framework diagram
    - Metadata: Add to `posts.json`
 
-2. **Post 2: "Voice Import Feature"**
-   - Research: Test voice import in app, document workflow
-   - Outline: Problem, solution, how it works, demo
+2. **Post 2: "Using AI in the right way for Jazz Practice"**
+   - Research: Use of AI as a support and coach generally in different ways
+   - Outline: Problem, solution, how it works, demo. The problem is AI not being an in person teacher, it can't listen, so what can it do....
    - Write: 1,200-1,500 words
    - Images: Screenshot of voice import UI, demo GIF
    - Metadata: Add to `posts.json`

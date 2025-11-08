@@ -169,9 +169,7 @@
       <div class="max-w-6xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">Blog</h1>
         <p class="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
-          Expert tips, practice methods, and insights to help you master jazz.
-          Learn about spaced repetition, AI-powered feedback, and effective
-          practice techniques.
+          Tips, practice methods, and insights to help your jazz practice.
         </p>
       </div>
     </section>
@@ -249,7 +247,9 @@
                 alt="JazzPracticePro"
                 class="h-8 w-auto"
               />
-              <span class="ml-2 text-xl font-bold text-purple-600">JazzPracticePro</span>
+              <span class="ml-2 text-xl font-bold text-purple-600"
+                >JazzPracticePro</span
+              >
             </div>
             <p class="text-gray-300 text-sm">
               A simple, structured practice journal for jazz musicians.
@@ -324,7 +324,9 @@
                 >
               </li>
               <li>
-                <a href="/blog/feed.xml" class="hover:text-white transition-colors"
+                <a
+                  href="/blog/feed.xml"
+                  class="hover:text-white transition-colors"
                   >RSS Feed</a
                 >
               </li>
@@ -467,7 +469,9 @@
         const tagFilterContainer = document.getElementById("tag-filter");
 
         // Get all unique tags
-        const allTags = [...new Set(allPosts.flatMap((post) => post.tags))].sort();
+        const allTags = [
+          ...new Set(allPosts.flatMap((post) => post.tags)),
+        ].sort();
 
         const tagsHTML = allTags
           .map(
@@ -478,7 +482,9 @@
 
         tagFilterContainer.innerHTML = `
           <span class="text-gray-600 font-medium mr-2">Filter by tag:</span>
-          <span class="tag ${!selectedTag ? "active" : ""}" onclick="clearTagFilter()">All</span>
+          <span class="tag ${
+            !selectedTag ? "active" : ""
+          }" onclick="clearTagFilter()">All</span>
           ${tagsHTML}
         `;
       }
@@ -514,7 +520,9 @@
 
       // Apply filters
       function applyFilters() {
-        const searchQuery = document.getElementById("search-input").value.trim();
+        const searchQuery = document
+          .getElementById("search-input")
+          .value.trim();
 
         let posts = [...allPosts];
 

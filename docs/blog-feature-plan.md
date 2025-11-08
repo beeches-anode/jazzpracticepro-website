@@ -1030,16 +1030,16 @@ loadBlogPosts();
 
 **Goal**: Write and publish first 3 blog posts
 
-**Post 1: "The 7 Pillars of Jazz Practice: A Modern Framework"**
+**Post 1: "Pillars as a Framework for Jazz Practice"**
 - Research: Review app's help docs, analyze pillar theory
-- Outline: Introduction, each pillar explained, how to use, CTA
+- Outline: Introduction, the idea of core pillar explained, how to use, CTA
 - Write: 1,500-2,000 words
 - Images: Screenshot of pillars in app, diagram of framework
 - Metadata: Add to `posts.json`
 - **Time**: 6 hours
 
-**Post 2: "Voice Import: Log Your Practice in Seconds with AI"**
-- Research: Test voice import feature, document workflow
+**Post 2: "AI as a Practice Partner"**
+- Research: AI use as a coach in different fields and music
 - Outline: Problem (slow logging), solution (voice), how it works, demo
 - Write: 1,200-1,500 words
 - Images: Screenshot of voice import UI, demo GIF
