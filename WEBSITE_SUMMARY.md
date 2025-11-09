@@ -86,7 +86,7 @@ cd website
 
 - All "Launch App" buttons: `https://app.jazzpracticepro.com`
 - Social media links in footer
-- Contact email: `support@jazzpracticepro.com`
+- Contact email: `contact@jazzpracticepro.com`
 
 ### Content to Review
 
