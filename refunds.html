@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Refunds & Cancellations - JazzPracticePro</title>
+    <meta
+      name="description"
+      content="Refund policy and cancellation process for JazzPracticePro subscriptions."
+    />
+    <meta name="author" content="JazzPracticePro" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "brand-primary": "#7c3aed",
+              "brand-secondary": "#8b5cf6",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+
+    <style>
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center">
+            <a href="/" class="flex items-center">
+              <img
+                src="/JazzPracticePro_logo_large.png"
+                alt="JazzPracticePro"
+                class="h-8 w-auto"
+              />
+              <span class="ml-2 text-xl font-bold text-purple-600"
+                >JazzPracticePro</span
+              >
+            </a>
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="/"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >Home</a
+            >
+            <a
+              href="/help/features.html"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >Features</a
+            >
+            <a
+              href="/blog/"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >Blog</a
+            >
+          </div>
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-600 hover:text-purple-600"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+          <a href="/" class="block py-2 text-gray-600 hover:text-purple-600"
+            >Home</a
+          >
+          <a
+            href="/help/features.html"
+            class="block py-2 text-gray-600 hover:text-purple-600"
+            >Features</a
+          >
+          <a
+            href="/blog/"
+            class="block py-2 text-gray-600 hover:text-purple-600"
+            >Blog</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-purple-50 to-blue-50 py-16">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          Refunds & Cancellations
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
+          Clear information about our refund policy and how to cancel your
+          subscription.
+        </p>
+        <div
+          class="bg-white rounded-lg p-6 shadow-md max-w-2xl mx-auto text-left"
+        >
+          <h2 class="text-xl font-semibold text-gray-800 mb-3">
+            Business Details
+          </h2>
+          <p class="text-gray-700 mb-2">
+            <strong>JazzPracticePro</strong> – ABN 57 253 432 686
+          </p>
+          <p class="text-gray-700">
+            Owned and operated by Mr Trent Jordan, individual / sole trader,
+            trading as JazzPracticePro.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-12">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="prose prose-lg max-w-none">
+          <!-- Important Notice -->
+          <div class="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
+            <p class="text-blue-800 font-medium mb-2">
+              <strong>Digital Service – No Physical Goods</strong>
+            </p>
+            <p class="text-blue-800">
+              JazzPracticePro is a digital service. You receive immediate access
+              to the app upon subscription, and no physical goods are provided.
+            </p>
+          </div>
+
+          <!-- Refund Policy -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Refund Policy</h2>
+            <p class="text-gray-700 mb-4">
+              We want you to be satisfied with JazzPracticePro. Our refund
+              policy is as follows:
+            </p>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              When Refunds Are Available
+            </h3>
+            <p class="text-gray-700 mb-4">
+              We offer refunds where required under Australian Consumer Law.
+              Refunds may be granted in cases such as:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+              <li>
+                <strong>Billing errors:</strong> You were charged in error
+                (e.g., duplicate charges, charged after cancellation)
+              </li>
+              <li>
+                <strong>Technical issues:</strong> The service is not
+                functioning as described and we cannot resolve the issue
+              </li>
+              <li>
+                <strong>Unauthorized charges:</strong> Charges were made without
+                your authorization
+              </li>
+              <li>
+                <strong>First-time subscribers:</strong> Within 14 days of your
+                first subscription payment if you are not satisfied with the
+                service
+              </li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              How to Request a Refund
+            </h3>
+            <p class="text-gray-700 mb-4">
+              If you believe you are eligible for a refund:
+            </p>
+            <ol class="list-decimal list-inside space-y-2 text-gray-700 mb-6">
+              <li>
+                Contact us at
+                <a
+                  href="mailto:support@jazzpracticepro.com"
+                  class="text-purple-600 hover:text-purple-800 underline font-semibold"
+                  >support@jazzpracticepro.com</a
+                >
+              </li>
+              <li>
+                Include your account email address and reason for the refund
+                request
+              </li>
+              <li>
+                Submit your request within
+                <strong>14 days of the charge</strong>
+              </li>
+              <li>
+                We will review your request and respond within 3-5 business days
+              </li>
+            </ol>
+
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-6">
+              <p class="text-yellow-800 mb-2">
+                <strong>Note:</strong> Refund requests submitted more than 14
+                days after the charge may be denied unless there are exceptional
+                circumstances.
+              </p>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              Refund Processing
+            </h3>
+            <p class="text-gray-700 mb-4">If your refund is approved:</p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+              <li>
+                Refunds are processed through Stripe, our payment processor
+              </li>
+              <li>
+                Refunds typically appear in your account within 5-10 business
+                days, depending on your bank
+              </li>
+              <li>
+                You will receive an email confirmation when the refund is
+                processed
+              </li>
+              <li>
+                Your subscription will be cancelled immediately upon refund
+              </li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              When Refunds Are Not Available
+            </h3>
+            <p class="text-gray-700 mb-4">
+              Refunds are generally not provided for:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+              <li>
+                Change of mind after using the service beyond the 14-day period
+              </li>
+              <li>
+                Partial refunds for unused portions of monthly or annual
+                subscriptions
+              </li>
+              <li>AI credits that have already been used</li>
+              <li>
+                Subscriptions cancelled mid-billing period (access continues
+                until period end)
+              </li>
+            </ul>
+          </section>
+
+          <!-- Cancellation Policy -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              Cancellation Policy
+            </h2>
+
+            <div class="bg-green-50 border-l-4 border-green-400 p-6 mb-6">
+              <p class="text-green-800 font-medium">
+                <strong>You can cancel your subscription at any time.</strong>
+                There are no cancellation fees or penalties.
+              </p>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              How to Cancel
+            </h3>
+            <p class="text-gray-700 mb-4">
+              You have two options to cancel your JazzPracticePro subscription:
+            </p>
+
+            <h4 class="text-xl font-semibold text-gray-800 mb-3">
+              Option 1: Cancel Through the App
+            </h4>
+            <ol class="list-decimal list-inside space-y-2 text-gray-700 mb-6">
+              <li>Log in to your JazzPracticePro account</li>
+              <li>Go to Settings → Account → Subscription</li>
+              <li>Click "Cancel Subscription"</li>
+              <li>Confirm your cancellation</li>
+            </ol>
+
+            <h4 class="text-xl font-semibold text-gray-800 mb-3">
+              Option 2: Cancel by Email
+            </h4>
+            <p class="text-gray-700 mb-4">
+              Send an email to
+              <a
+                href="mailto:support@jazzpracticepro.com"
+                class="text-purple-600 hover:text-purple-800 underline font-semibold"
+                >support@jazzpracticepro.com</a
+              >
+              with:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+              <li>Subject line: "Cancel Subscription"</li>
+              <li>Your account email address</li>
+              <li>We will process your cancellation within 1 business day</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              What Happens When You Cancel
+            </h3>
+            <div
+              class="bg-white border-2 border-purple-200 rounded-lg p-6 mb-6"
+            >
+              <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-purple-600 font-bold mr-3">✓</span>
+                  <span
+                    ><strong>Continued access:</strong> You will keep access to
+                    JazzPracticePro premium features until the end of your
+                    current billing period.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="text-purple-600 font-bold mr-3">✓</span>
+                  <span
+                    ><strong>No future charges:</strong> You will not be charged
+                    for any future billing periods.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="text-purple-600 font-bold mr-3">✓</span>
+                  <span
+                    ><strong>Data retention:</strong> Your practice data remains
+                    accessible in the free tier of the app.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="text-purple-600 font-bold mr-3">✓</span>
+                  <span
+                    ><strong>Resubscribe anytime:</strong> You can reactivate
+                    your subscription at any time in the future.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              Cancellation Timing
+            </h3>
+            <p class="text-gray-700 mb-4">
+              To avoid being charged for the next billing period:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+              <li>
+                <strong>Monthly subscriptions:</strong> Cancel at least 24 hours
+                before your next billing date
+              </li>
+              <li>
+                <strong>Annual subscriptions:</strong> Cancel at least 7 days
+                before your renewal date
+              </li>
+            </ul>
+
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-6">
+              <p class="text-blue-800">
+                <strong>Tip:</strong> You can check your next billing date in
+                your account settings under Subscription details.
+              </p>
+            </div>
+          </section>
+
+          <!-- Free Tier Information -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              Free Tier After Cancellation
+            </h2>
+            <p class="text-gray-700 mb-4">
+              When your premium subscription ends, your account automatically
+              reverts to the free tier, which includes:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+              <li>Full practice tracking and logging</li>
+              <li>Repertoire management</li>
+              <li>Basic statistics</li>
+              <li>Limited AI credits (monthly allocation)</li>
+              <li>All your existing practice data</li>
+            </ul>
+            <p class="text-gray-700">
+              You can continue using JazzPracticePro for free indefinitely, with
+              access to all core features.
+            </p>
+          </section>
+
+          <!-- Australian Consumer Law -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              Australian Consumer Law
+            </h2>
+            <p class="text-gray-700 mb-4">
+              Nothing in this refund policy limits your rights under the
+              Australian Consumer Law (ACL). Under the ACL, you are entitled to:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+              <li>Services that are provided with acceptable care and skill</li>
+              <li>
+                Services that are fit for the purpose we said they would be fit
+                for
+              </li>
+              <li>Services delivered within a reasonable time</li>
+            </ul>
+            <p class="text-gray-700">
+              If we fail to meet these guarantees, you may be entitled to a
+              remedy under the ACL.
+            </p>
+          </section>
+
+          <!-- Contact -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              Questions About Refunds or Cancellations?
+            </h2>
+            <div class="bg-purple-50 border-l-4 border-purple-400 p-6">
+              <p class="text-purple-800 mb-4">
+                We're here to help. If you have any questions about refunds or
+                cancellations, please contact us:
+              </p>
+              <p class="text-purple-800 mb-2">
+                <strong>Email:</strong>
+                <a
+                  href="mailto:support@jazzpracticepro.com"
+                  class="underline hover:text-purple-900 font-semibold"
+                  >support@jazzpracticepro.com</a
+                >
+              </p>
+              <p class="text-purple-800 text-sm mb-2">
+                <strong>Business name:</strong> JazzPracticePro (ABN 57 253 432
+                686)
+              </p>
+              <p class="text-purple-800 text-sm">
+                <strong>Business address:</strong> Dutton Park QLD 4102,
+                Australia
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <img
+                src="/JazzPracticePro_logo_large.png"
+                alt="JazzPracticePro"
+                class="h-8 w-auto"
+              />
+              <span class="ml-2 text-xl font-bold text-purple-600"
+                >JazzPracticePro</span
+              >
+            </div>
+            <p class="text-gray-300 text-sm">
+              A simple, structured practice journal for jazz musicians.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Product</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>
+                <a
+                  href="/help/features.html"
+                  class="hover:text-white transition-colors"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="/blog/" class="hover:text-white transition-colors"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://jazzpracticepro.app"
+                  class="hover:text-white transition-colors"
+                  >Launch App</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Support</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>
+                <a
+                  href="mailto:support@jazzpracticepro.com"
+                  class="hover:text-white transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/privacy.html"
+                  class="hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="/terms.html" class="hover:text-white transition-colors"
+                  >Terms of Use</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Connect</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>
+                <span class="text-gray-500 cursor-not-allowed"
+                  >Twitter (Coming Soon)</span
+                >
+              </li>
+              <li>
+                <span class="text-gray-500 cursor-not-allowed"
+                  >Instagram (Coming Soon)</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-300"
+        >
+          <p class="mb-2">© 2025 JazzPracticePro – ABN 57 253 432 686</p>
+          <p class="mb-2">Owned and operated by Trent Jordan, sole trader.</p>
+          <p class="mb-4">
+            <strong>Contact:</strong>
+            <a
+              href="mailto:support@jazzpracticepro.com"
+              class="hover:text-white underline"
+              >support@jazzpracticepro.com</a
+            >
+          </p>
+          <p class="mb-4 text-xs">
+            Registered business address: Dutton Park QLD 4102, Australia
+          </p>
+          <p>
+            <a href="/privacy.html" class="hover:text-white underline"
+              >Privacy Policy</a
+            >
+            |
+            <a href="/terms.html" class="hover:text-white underline"
+              >Terms of Use</a
+            >
+            |
+            <a href="/refunds.html" class="hover:text-white underline"
+              >Refunds & Cancellations</a
+            >
+          </p>
+          <p class="mt-4 text-xs">Last updated: November 8, 2025</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile menu script -->
+    <script>
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

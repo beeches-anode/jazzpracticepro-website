@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Use - JazzPracticePro</title>
+    <meta
+      name="description"
+      content="Terms of Use for JazzPracticePro - acceptable use, subscriptions, billing, and service terms."
+    />
+    <meta name="author" content="JazzPracticePro" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "brand-primary": "#7c3aed",
+              "brand-secondary": "#8b5cf6",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+
+    <style>
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center">
+            <a href="/" class="flex items-center">
+              <img
+                src="/JazzPracticePro_logo_large.png"
+                alt="JazzPracticePro"
+                class="h-8 w-auto"
+              />
+              <span class="ml-2 text-xl font-bold text-purple-600"
+                >JazzPracticePro</span
+              >
+            </a>
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="/"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >Home</a
+            >
+            <a
+              href="/help/features.html"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >Features</a
+            >
+            <a
+              href="/blog/"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >Blog</a
+            >
+          </div>
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-600 hover:text-purple-600"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+          <a href="/" class="block py-2 text-gray-600 hover:text-purple-600"
+            >Home</a
+          >
+          <a
+            href="/help/features.html"
+            class="block py-2 text-gray-600 hover:text-purple-600"
+            >Features</a
+          >
+          <a
+            href="/blog/"
+            class="block py-2 text-gray-600 hover:text-purple-600"
+            >Blog</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-purple-50 to-blue-50 py-16">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          Terms of Use
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
+          These terms govern your use of JazzPracticePro and outline our mutual
+          responsibilities.
+        </p>
+        <div
+          class="bg-white rounded-lg p-6 shadow-md max-w-2xl mx-auto text-left"
+        >
+          <h2 class="text-xl font-semibold text-gray-800 mb-3">
+            Business Details
+          </h2>
+          <p class="text-gray-700 mb-2">
+            <strong>JazzPracticePro</strong> – ABN 57 253 432 686
+          </p>
+          <p class="text-gray-700">
+            Owned and operated by Mr Trent Jordan, individual / sole trader,
+            trading as JazzPracticePro.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-12">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="prose prose-lg max-w-none">
+          <!-- Service Description -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              Service Description
+            </h2>
+            <p class="text-gray-700 mb-4">
+              JazzPracticePro is a practice journal and educational support tool
+              designed for jazz musicians. The service provides:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+              <li>Practice session tracking and logging</li>
+              <li>Repertoire management with spaced repetition</li>
+              <li>Optional AI-powered practice feedback and suggestions</li>
+              <li>Statistics and progress tracking</li>
+              <li>Local-first data storage with optional cloud backup</li>
+            </ul>
+            <p class="text-gray-700">
+              JazzPracticePro is provided for educational and practice support
+              purposes. It is a Progressive Web App (PWA) that works across
+              desktop, tablet, and mobile devices.
+            </p>
+          </section>
+
+          <!-- Account & Acceptable Use -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              Account & Acceptable Use
+            </h2>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              Account Registration
+            </h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+              <li>
+                <strong>One account per person:</strong> Each account is
+                intended for individual use only.
+              </li>
+              <li>
+                <strong>Authentication:</strong> You authenticate using email
+                and one-time password (OTP).
+              </li>
+              <li>
+                <strong>Account security:</strong> You are responsible for
+                maintaining the security of your account credentials.
+              </li>
+              <li>
+                <strong>Accurate information:</strong> You agree to provide
+                accurate contact information.
+              </li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              Acceptable Use
+            </h3>
+            <p class="text-gray-700 mb-4">You agree not to:</p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+              <li>Share your login credentials with others</li>
+              <li>Use the service for any unlawful purpose</li>
+              <li>
+                Attempt to gain unauthorized access to the service or other
+                users' accounts
+              </li>
+              <li>Abuse, harass, or harm other users</li>
+              <li>Interfere with or disrupt the service or servers</li>
+              <li>
+                Use automated means to access the service without permission
+              </li>
+              <li>
+                Attempt to reverse engineer or extract source code from the
+                application
+              </li>
+            </ul>
+          </section>
+
+          <!-- Subscriptions & Billing -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              Subscriptions & Billing
+            </h2>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Free Tier</h3>
+            <p class="text-gray-700 mb-4">
+              JazzPracticePro offers a free tier with basic features including
+              practice tracking, repertoire management, and limited AI credits.
+            </p>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              Premium Tier
+            </h3>
+            <p class="text-gray-700 mb-4">
+              Premium subscriptions provide enhanced features including:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+              <li>Enhanced statistics (30-day and all-time insights)</li>
+              <li>
+                Additional AI credits for practice feedback and voice import
+              </li>
+              <li>Priority support</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              Billing Terms
+            </h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+              <li>
+                <strong>Billing cycle:</strong> Subscriptions are billed monthly
+                or annually, depending on the plan you choose.
+              </li>
+              <li>
+                <strong>Auto-renewal:</strong> Subscriptions automatically renew
+                at the end of each billing period unless cancelled.
+              </li>
+              <li>
+                <strong>Payment processing:</strong> All payments are processed
+                securely by Stripe. We do not store your payment card details.
+              </li>
+              <li>
+                <strong>Card statement descriptor:</strong> Charges on your card
+                will appear as <strong>JAZZPRACTICEPRO</strong>.
+              </li>
+              <li>
+                <strong>Price changes:</strong> We will notify you at least 30
+                days in advance of any price changes to your subscription.
+              </li>
+            </ul>
+
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-6 mb-4">
+              <p class="text-blue-800">
+                <strong>Note:</strong> Charges on your credit card or bank
+                statement will appear as <strong>JAZZPRACTICEPRO</strong>.
+              </p>
+            </div>
+          </section>
+
+          <!-- Cancellation -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Cancellation</h2>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              How to Cancel
+            </h3>
+            <p class="text-gray-700 mb-4">
+              You can cancel your subscription at any time by:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+              <li>Managing your subscription through the app settings, or</li>
+              <li>
+                Emailing us at
+                <a
+                  href="mailto:support@jazzpracticepro.com"
+                  class="text-purple-600 hover:text-purple-800 underline"
+                  >support@jazzpracticepro.com</a
+                >
+              </li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              What Happens on Cancellation
+            </h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+              <li>
+                Your access to premium features will continue until the end of
+                your current billing period.
+              </li>
+              <li>You will not be charged for future billing periods.</li>
+              <li>Your practice data remains accessible in the free tier.</li>
+              <li>You can re-subscribe at any time.</li>
+            </ul>
+          </section>
+
+          <!-- Data & Privacy -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              Data & Privacy
+            </h2>
+            <p class="text-gray-700 mb-4">
+              JazzPracticePro is a local-first application. Your practice data
+              is stored on your device and is not sent to our servers unless
+              you:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+              <li>
+                Explicitly use AI features (practice feedback, voice import)
+              </li>
+              <li>Enable optional end-to-end encrypted cloud backup</li>
+            </ul>
+            <p class="text-gray-700 mb-4">
+              For full details on how we handle your data, please see our
+              <a
+                href="/privacy.html"
+                class="text-purple-600 hover:text-purple-800 underline"
+                >Privacy Policy</a
+              >.
+            </p>
+          </section>
+
+          <!-- Intellectual Property -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              Intellectual Property
+            </h2>
+            <p class="text-gray-700 mb-4">
+              The JazzPracticePro application, including its design, features,
+              and content, is owned by Trent Jordan (trading as JazzPracticePro)
+              and is protected by copyright and other intellectual property
+              laws.
+            </p>
+            <p class="text-gray-700 mb-4">
+              <strong>Your data:</strong> You retain full ownership of all
+              practice data, notes, and content you create using
+              JazzPracticePro. You can export your data at any time.
+            </p>
+          </section>
+
+          <!-- Limitation of Liability -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              Limitation of Liability
+            </h2>
+            <p class="text-gray-700 mb-4">
+              JazzPracticePro is provided "as is" without warranties of any
+              kind, either express or implied. To the maximum extent permitted
+              by law:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+              <li>
+                We do not guarantee that the service will be uninterrupted,
+                error-free, or completely secure.
+              </li>
+              <li>
+                We are not liable for any loss of data, though we provide backup
+                tools to help you protect your information.
+              </li>
+              <li>
+                AI-generated feedback is for educational purposes only and
+                should not replace professional musical instruction.
+              </li>
+              <li>
+                Our total liability to you for any claims arising from the
+                service is limited to the amount you paid us in the 12 months
+                prior to the claim.
+              </li>
+            </ul>
+            <p class="text-gray-700 mb-4">
+              This limitation does not affect any consumer rights you may have
+              under Australian Consumer Law.
+            </p>
+          </section>
+
+          <!-- Service Availability -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              Service Availability
+            </h2>
+            <p class="text-gray-700 mb-4">
+              We strive to keep JazzPracticePro available and reliable. However:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+              <li>
+                We may need to suspend the service temporarily for maintenance
+                or updates.
+              </li>
+              <li>
+                We reserve the right to modify or discontinue features with
+                reasonable notice.
+              </li>
+              <li>
+                The service depends on third-party providers (hosting, AI,
+                authentication) whose availability we cannot guarantee.
+              </li>
+            </ul>
+          </section>
+
+          <!-- Changes to Terms -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              Changes to These Terms
+            </h2>
+            <p class="text-gray-700 mb-4">
+              We may update these Terms of Use from time to time. If we make
+              material changes, we will notify you by:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+              <li>Email (to the address associated with your account)</li>
+              <li>A notice in the app</li>
+              <li>
+                Updating the "Last Updated" date at the bottom of this page
+              </li>
+            </ul>
+            <p class="text-gray-700 mb-4">
+              Your continued use of the service after changes take effect
+              constitutes acceptance of the updated terms.
+            </p>
+          </section>
+
+          <!-- Governing Law -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Governing Law</h2>
+            <p class="text-gray-700 mb-4">
+              These Terms of Use are governed by the laws of Queensland,
+              Australia. Any disputes arising from these terms or your use of
+              JazzPracticePro will be subject to the jurisdiction of the courts
+              of Queensland.
+            </p>
+          </section>
+
+          <!-- Contact -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Contact Us</h2>
+            <div class="bg-purple-50 border-l-4 border-purple-400 p-6">
+              <p class="text-purple-800 mb-4">
+                If you have questions about these Terms of Use, please contact
+                us:
+              </p>
+              <p class="text-purple-800 mb-2">
+                <strong>Email:</strong>
+                <a
+                  href="mailto:support@jazzpracticepro.com"
+                  class="underline hover:text-purple-900 font-semibold"
+                  >support@jazzpracticepro.com</a
+                >
+              </p>
+              <p class="text-purple-800 text-sm">
+                <strong>Business name:</strong> JazzPracticePro (ABN 57 253 432
+                686)
+              </p>
+              <p class="text-purple-800 text-sm">
+                <strong>Business address:</strong> Dutton Park QLD 4102,
+                Australia
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <img
+                src="/JazzPracticePro_logo_large.png"
+                alt="JazzPracticePro"
+                class="h-8 w-auto"
+              />
+              <span class="ml-2 text-xl font-bold text-purple-600"
+                >JazzPracticePro</span
+              >
+            </div>
+            <p class="text-gray-300 text-sm">
+              A simple, structured practice journal for jazz musicians.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Product</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>
+                <a
+                  href="/help/features.html"
+                  class="hover:text-white transition-colors"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="/blog/" class="hover:text-white transition-colors"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://jazzpracticepro.app"
+                  class="hover:text-white transition-colors"
+                  >Launch App</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Support</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>
+                <a
+                  href="mailto:support@jazzpracticepro.com"
+                  class="hover:text-white transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/privacy.html"
+                  class="hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="/terms.html" class="hover:text-white transition-colors"
+                  >Terms of Use</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Connect</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>
+                <span class="text-gray-500 cursor-not-allowed"
+                  >Twitter (Coming Soon)</span
+                >
+              </li>
+              <li>
+                <span class="text-gray-500 cursor-not-allowed"
+                  >Instagram (Coming Soon)</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-300"
+        >
+          <p class="mb-2">© 2025 JazzPracticePro – ABN 57 253 432 686</p>
+          <p class="mb-2">Owned and operated by Trent Jordan, sole trader.</p>
+          <p class="mb-4">
+            <strong>Contact:</strong>
+            <a
+              href="mailto:support@jazzpracticepro.com"
+              class="hover:text-white underline"
+              >support@jazzpracticepro.com</a
+            >
+          </p>
+          <p class="mb-4 text-xs">
+            Registered business address: Dutton Park QLD 4102, Australia
+          </p>
+          <p>
+            <a href="/privacy.html" class="hover:text-white underline"
+              >Privacy Policy</a
+            >
+            |
+            <a href="/terms.html" class="hover:text-white underline"
+              >Terms of Use</a
+            >
+            |
+            <a href="/refunds.html" class="hover:text-white underline"
+              >Refunds & Cancellations</a
+            >
+          </p>
+          <p class="mt-4 text-xs">Last updated: November 8, 2025</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile menu script -->
+    <script>
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

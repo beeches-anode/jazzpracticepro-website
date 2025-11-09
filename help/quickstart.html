@@ -8,146 +8,681 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/icon-192.png" />
     <link rel="apple-touch-icon" href="/icon-192.png" />
 
+    <!-- Tailwind CSS Production Build -->
+    <link rel="stylesheet" href="/styles.css" />
+
+    <!-- App-Inspired Theme (comment out to disable) -->
+    <link rel="stylesheet" href="/styles-app-theme.css" />
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "brand-primary": "#7c3aed",
+              "brand-secondary": "#8b5cf6",
+            },
+          },
+        },
+      };
+    </script>
     <style>
-      /* Simple typography for markdown - no plugin needed */
-      #markdown-content h1 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        margin-top: 1.5rem;
-        color: #111827;
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       }
-      #markdown-content h1:first-child {
-        margin-top: 0;
+      .step-card {
+        transition: all 0.2s ease-in-out;
       }
-      #markdown-content h2 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-bottom: 0.75rem;
-        margin-top: 1.25rem;
-        color: #111827;
+      .step-card:hover {
+        transform: translateY(-2px);
       }
-      #markdown-content h3 {
-        font-size: 1.125rem;
-        font-weight: 500;
-        margin-bottom: 0.5rem;
-        margin-top: 1rem;
-        color: #111827;
-      }
-      #markdown-content p {
-        margin-bottom: 1rem;
-        color: #374151;
-        line-height: 1.75;
-      }
-      #markdown-content ol {
-        list-style-type: decimal;
-        list-style-position: inside;
-        margin-bottom: 1rem;
-        counter-reset: list-counter;
-      }
-      #markdown-content ol li {
-        margin-bottom: 0.5rem;
-      }
-      #markdown-content ul {
-        list-style-type: disc;
-        list-style-position: inside;
-        margin-bottom: 1rem;
-      }
-      #markdown-content ul > li {
-        margin-bottom: 0.5rem;
-      }
-      #markdown-content ul ul {
-        margin-left: 1rem;
-        margin-top: 0.5rem;
-        list-style-type: circle;
-      }
-      #markdown-content li {
-        color: #374151;
-        line-height: 1.75;
-      }
-      #markdown-content li > ul {
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-      }
-      #markdown-content a {
-        color: #7c3aed;
-        text-decoration: underline;
-      }
-      #markdown-content a:hover {
-        color: #6d28d9;
-      }
-      #markdown-content em {
-        font-style: italic;
-      }
-      #markdown-content code {
-        background-color: #f3f4f6;
-        padding: 0.125rem 0.25rem;
-        border-radius: 0.25rem;
-        font-size: 0.875rem;
-        font-family: monospace;
-      }
-      #markdown-content pre {
-        background-color: #f3f4f6;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        overflow-x: auto;
-        margin-bottom: 1rem;
-      }
-      #markdown-content pre code {
-        background-color: transparent;
-        padding: 0;
+      .tip-box {
+        border-left: 4px solid #7c3aed;
       }
     </style>
   </head>
-  <body class="bg-white text-gray-800">
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
     <nav class="bg-white shadow-sm border-b">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center py-4">
-          <div class="flex items-center">
+          <a
+            href="/"
+            class="flex items-center hover:opacity-80 transition-opacity"
+          >
             <img
               src="/JazzPracticePro_logo_large.png"
               alt="JazzPracticePro"
               class="h-8 w-auto"
             />
-            <span class="ml-2 text-xl font-bold text-gray-800"
+            <span class="ml-2 text-xl font-bold text-purple-600"
               >JazzPracticePro</span
             >
-          </div>
-          <div>
+          </a>
+          <div class="hidden md:flex items-center space-x-8">
             <a
-              href="/"
+              href="/help/features.html"
               class="text-gray-600 hover:text-purple-600 transition-colors"
-              >Home</a
+              >Features</a
+            >
+            <a
+              href="/blog/"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+              >Blog</a
+            >
+            <a
+              href="/help/quickstart.html"
+              class="text-purple-600 font-semibold border-b-2 border-purple-600"
+              >Quickstart</a
             >
           </div>
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-600 hover:text-purple-600"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+          <a
+            href="/help/features.html"
+            class="block py-2 text-gray-600 hover:text-purple-600"
+            >Features</a
+          >
+          <a
+            href="/blog/"
+            class="block py-2 text-gray-600 hover:text-purple-600"
+            >Blog</a
+          >
+          <a
+            href="/help/quickstart.html"
+            class="block py-2 text-purple-600 font-semibold"
+            >Quickstart</a
+          >
         </div>
       </div>
     </nav>
 
-    <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <h1 class="text-3xl font-bold mb-6">Quickstart</h1>
-      <div id="markdown-content"></div>
-    </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
-      (async function loadMarkdown() {
-        try {
-          const response = await fetch("quickstart.md", { cache: "no-cache" });
-          if (!response.ok) throw new Error("Failed to load quickstart.md");
-          const markdown = await response.text();
-          const html = marked.parse(markdown, {
-            mangle: false,
-            headerIds: true,
-          });
-          document.getElementById("markdown-content").innerHTML = html;
-        } catch (error) {
-          document.getElementById("markdown-content").innerHTML =
-            '<p class="text-red-600">Unable to load documentation. Please try again later.</p>';
-          console.error(error);
-        }
-      })();
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      }
     </script>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-16 px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Quickstart Guide</h1>
+        <p class="text-xl opacity-90">
+          Get up and running in minutes with JazzPracticePro
+        </p>
+      </div>
+    </section>
+
+    <!-- First-Time Setup -->
+    <section class="py-16 px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">First-Time Setup</h2>
+
+        <div class="step-card bg-white rounded-lg shadow-lg p-8 mb-6">
+          <div class="flex items-center mb-4">
+            <div
+              class="bg-purple-100 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0"
+            >
+              <span class="text-2xl font-bold text-purple-600">1</span>
+            </div>
+            <h3 class="text-2xl font-bold text-purple-600">
+              Complete Onboarding
+            </h3>
+          </div>
+
+          <div class="ml-16">
+            <p class="text-gray-600 mb-4">
+              When you first open JazzPracticePro, you'll be guided through:
+            </p>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2 mt-1">•</span>
+                <span
+                  ><strong>Welcome screen:</strong> Learn what JazzPracticePro
+                  offers</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2 mt-1">•</span>
+                <span
+                  ><strong>Instrument selection:</strong> Choose your primary
+                  instrument (this seeds relevant practice pillars)</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2 mt-1">•</span>
+                <span
+                  ><strong>Experience context:</strong> Describe your playing
+                  level (helps AI provide personalized feedback)</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2 mt-1">•</span>
+                <span
+                  ><strong>Pillar preview:</strong> See 5-7 recommended practice
+                  categories for your instrument</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2 mt-1">•</span>
+                <span
+                  ><strong>Authentication</strong> (optional): Sign in with
+                  email + OTP code for cloud backup access</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2 mt-1">•</span>
+                <span
+                  ><strong>Restore options:</strong> Import existing data or
+                  start fresh</span
+                >
+              </li>
+            </ul>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
+              <p class="text-sm text-blue-800">
+                <strong>Note:</strong> You can skip authentication and use the
+                app entirely offline. Sign-in is only needed for cloud backup.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Workflows -->
+    <section class="py-16 px-4 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Core Workflows</h2>
+
+        <!-- Log First Practice Session -->
+        <div class="step-card bg-gray-50 rounded-lg shadow-lg p-8 mb-6">
+          <div class="flex items-center mb-4">
+            <div
+              class="bg-purple-100 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0"
+            >
+              <span class="text-2xl font-bold text-purple-600">2</span>
+            </div>
+            <h3 class="text-2xl font-bold text-purple-600">
+              Log Your First Practice Session
+            </h3>
+          </div>
+
+          <div class="ml-16">
+            <h4 class="font-bold text-lg mb-3 text-gray-800">Quick Entry:</h4>
+            <ol class="space-y-2 text-gray-600 mb-6">
+              <li class="flex items-start">
+                <span class="font-bold mr-2">1.</span>
+                <span>Tap "Log Practice" from the home screen</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">2.</span>
+                <span>Select your instrument and date</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">3.</span>
+                <span
+                  >Add exercises to relevant practice pillars (e.g.,
+                  "Repertoire", "Technique")</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">4.</span>
+                <span
+                  >Each exercise includes a description and duration in
+                  minutes</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">5.</span>
+                <span>Optionally add session notes</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">6.</span>
+                <span>Save your session</span>
+              </li>
+            </ol>
+
+            <h4 class="font-bold text-lg mb-3 text-gray-800">
+              Fast Entry with Voice Import:
+            </h4>
+            <ol class="space-y-2 text-gray-600">
+              <li class="flex items-start">
+                <span class="font-bold mr-2">1.</span>
+                <span>Open the practice editor and tap "Voice Import"</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">2.</span>
+                <span
+                  >Speak what you practiced:
+                  <em
+                    >"I did 20 minutes of long tones and 30 minutes on Giant
+                    Steps"</em
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">3.</span>
+                <span>Review the transcription (edit if needed)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">4.</span>
+                <span
+                  >Let AI parse your spoken notes into structured entries</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">5.</span>
+                <span>Preview parsed entries and confirm</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">6.</span>
+                <span
+                  >Entries merge into your session automatically (5-10x
+                  faster!)</span
+                >
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Track Repertoire -->
+        <div class="step-card bg-gray-50 rounded-lg shadow-lg p-8 mb-6">
+          <div class="flex items-center mb-4">
+            <div
+              class="bg-purple-100 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0"
+            >
+              <span class="text-2xl font-bold text-purple-600">3</span>
+            </div>
+            <h3 class="text-2xl font-bold text-purple-600">
+              Track Your Repertoire
+            </h3>
+          </div>
+
+          <div class="ml-16">
+            <ol class="space-y-2 text-gray-600">
+              <li class="flex items-start">
+                <span class="font-bold mr-2">1.</span>
+                <span>Navigate to the Repertoire page</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">2.</span>
+                <span
+                  >Search for a tune from our database of 525+ jazz standards
+                  (fuzzy search works great!)</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">3.</span>
+                <span>Add tunes to your personal repertoire</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">4.</span>
+                <span
+                  >When you practice a tune, reference it in your practice
+                  session</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">5.</span>
+                <span>View practice history and momentum for each tune</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Customize Practice Pillars -->
+        <div class="step-card bg-gray-50 rounded-lg shadow-lg p-8 mb-6">
+          <div class="flex items-center mb-4">
+            <div
+              class="bg-purple-100 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0"
+            >
+              <span class="text-2xl font-bold text-purple-600">4</span>
+            </div>
+            <h3 class="text-2xl font-bold text-purple-600">
+              Customize Your Practice Pillars
+            </h3>
+          </div>
+
+          <div class="ml-16">
+            <div
+              class="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-4"
+            >
+              <p class="text-sm text-purple-900">
+                <strong>What are practice pillars?</strong><br />
+                Pillars are customizable practice categories that structure your
+                sessions. You have 30 total slots:
+              </p>
+              <ul class="text-sm text-purple-900 mt-2 ml-4">
+                <li>
+                  • 2 system pillars (Repertoire, Transcription) - cannot be
+                  renamed
+                </li>
+                <li>
+                  • 28 custom pillars - activate from templates or create your
+                  own
+                </li>
+              </ul>
+            </div>
+
+            <h4 class="font-bold text-lg mb-3 text-gray-800">To customize:</h4>
+            <ol class="space-y-2 text-gray-600">
+              <li class="flex items-start">
+                <span class="font-bold mr-2">1.</span>
+                <span>Go to Settings → Practice Settings</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">2.</span>
+                <span
+                  >Choose from 21 pedagogically-grounded templates (recommended
+                  based on your instrument)</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">3.</span>
+                <span>Rename pillars to match your teacher's terminology</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">4.</span>
+                <span
+                  >Configure which pillars appear for each instrument (great for
+                  multi-instrumentalists!)</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">5.</span>
+                <span
+                  >Reset unused pillars to free up slots (only works if no
+                  practice data exists)</span
+                >
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Backup Your Data -->
+        <div class="step-card bg-gray-50 rounded-lg shadow-lg p-8 mb-6">
+          <div class="flex items-center mb-4">
+            <div
+              class="bg-purple-100 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0"
+            >
+              <span class="text-2xl font-bold text-purple-600">5</span>
+            </div>
+            <h3 class="text-2xl font-bold text-purple-600">Backup Your Data</h3>
+          </div>
+
+          <div class="ml-16">
+            <h4 class="font-bold text-lg mb-3 text-gray-800">
+              Local Backup (no sign-in required):
+            </h4>
+            <ol class="space-y-2 text-gray-600 mb-6">
+              <li class="flex items-start">
+                <span class="font-bold mr-2">1.</span>
+                <span>Go to Settings → Local Backup</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">2.</span>
+                <span>Tap "Export Backup"</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">3.</span>
+                <span>Download JSON file to your device</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">4.</span>
+                <span>Store safely for later import</span>
+              </li>
+            </ol>
+
+            <h4 class="font-bold text-lg mb-3 text-gray-800">
+              Cloud Backup (requires sign-in):
+            </h4>
+            <ol class="space-y-2 text-gray-600">
+              <li class="flex items-start">
+                <span class="font-bold mr-2">1.</span>
+                <span
+                  >Sign in with email (you'll receive a 6-digit OTP code)</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">2.</span>
+                <span>Go to Settings → Cloud Backup</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">3.</span>
+                <span
+                  >Create a passphrase (12+ characters, never sent to
+                  server!)</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">4.</span>
+                <span>Tap "Create Cloud Backup"</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">5.</span>
+                <span
+                  >Your data is encrypted on your device, then uploaded to
+                  secure cloud storage</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">6.</span>
+                <span>Restore anytime with your email and passphrase</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- AI Feedback -->
+        <div class="step-card bg-gray-50 rounded-lg shadow-lg p-8">
+          <div class="flex items-center mb-4">
+            <div
+              class="bg-purple-100 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0"
+            >
+              <span class="text-2xl font-bold text-purple-600">6</span>
+            </div>
+            <h3 class="text-2xl font-bold text-purple-600">
+              Get AI-Powered Feedback
+            </h3>
+          </div>
+
+          <div class="ml-16">
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+              <p class="text-sm text-blue-800">
+                <strong>Prerequisites:</strong> Sign in to check AI credit
+                balance (free tier includes 5 AI calls/month)
+              </p>
+            </div>
+
+            <h4 class="font-bold text-lg mb-3 text-gray-800">
+              To generate feedback:
+            </h4>
+            <ol class="space-y-2 text-gray-600">
+              <li class="flex items-start">
+                <span class="font-bold mr-2">1.</span>
+                <span>Navigate to AI Feedback page</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">2.</span>
+                <span
+                  >Choose feedback type (weekly review, practice plan,
+                  etc.)</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">3.</span>
+                <span>Tap "Generate AI Feedback"</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">4.</span>
+                <span>AI analyzes your recent practice patterns</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">5.</span>
+                <span
+                  >Get personalized insights, strengths, and actionable
+                  suggestions</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">6.</span>
+                <span
+                  >Credits are automatically reserved, confirmed on success, or
+                  refunded on failure</span
+                >
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pro Tips -->
+    <section class="py-16 px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Pro Tips</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="tip-box bg-purple-50 p-6 rounded-lg">
+            <h3 class="font-bold text-lg mb-2 text-purple-900">
+              🎤 Voice Import
+            </h3>
+            <p class="text-gray-700 text-sm">
+              Use voice import to log practice hands-free while warming down or
+              packing up
+            </p>
+          </div>
+
+          <div class="tip-box bg-purple-50 p-6 rounded-lg">
+            <h3 class="font-bold text-lg mb-2 text-purple-900">
+              📝 Session Notes
+            </h3>
+            <p class="text-gray-700 text-sm">
+              Add context to sessions - AI uses these for more personalized
+              feedback
+            </p>
+          </div>
+
+          <div class="tip-box bg-purple-50 p-6 rounded-lg">
+            <h3 class="font-bold text-lg mb-2 text-purple-900">
+              🎵 Tune History
+            </h3>
+            <p class="text-gray-700 text-sm">
+              Update repertoire after each focused session to see progress over
+              time
+            </p>
+          </div>
+
+          <div class="tip-box bg-purple-50 p-6 rounded-lg">
+            <h3 class="font-bold text-lg mb-2 text-purple-900">
+              🎹 Pillar Visibility
+            </h3>
+            <p class="text-gray-700 text-sm">
+              Multi-instrumentalists can configure different pillars for each
+              instrument
+            </p>
+          </div>
+
+          <div class="tip-box bg-purple-50 p-6 rounded-lg">
+            <h3 class="font-bold text-lg mb-2 text-purple-900">
+              📊 Statistics
+            </h3>
+            <p class="text-gray-700 text-sm">
+              Check the Statistics page regularly to track streaks and identify
+              practice patterns
+            </p>
+          </div>
+
+          <div class="tip-box bg-purple-50 p-6 rounded-lg">
+            <h3 class="font-bold text-lg mb-2 text-purple-900">
+              💾 Backup Regularly
+            </h3>
+            <p class="text-gray-700 text-sm">
+              Create cloud or local backups weekly to protect your practice data
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Need Help Section -->
+    <section class="py-16 px-4 bg-gradient-to-br from-purple-50 to-blue-50">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-8">Need Help?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a
+            href="/help/features.html"
+            class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
+          >
+            <div class="text-4xl mb-3">📋</div>
+            <h3 class="font-bold text-lg mb-2 text-purple-600">Features</h3>
+            <p class="text-gray-600 text-sm">Complete list of capabilities</p>
+          </a>
+          <a
+            href="/privacy.html"
+            class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
+          >
+            <div class="text-4xl mb-3">🔒</div>
+            <h3 class="font-bold text-lg mb-2 text-purple-600">Privacy</h3>
+            <p class="text-gray-600 text-sm">
+              Details on data security and AI usage
+            </p>
+          </a>
+          <a
+            href="mailto:contact@jazzpracticepro.com"
+            class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
+          >
+            <div class="text-4xl mb-3">✉️</div>
+            <h3 class="font-bold text-lg mb-2 text-purple-600">Contact Us</h3>
+            <p class="text-gray-600 text-sm">contact@jazzpracticepro.com</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 px-4">
+      <div class="max-w-6xl mx-auto text-center">
+        <p class="text-sm text-gray-300 mb-2">© 2025 JazzPracticePro – ABN 57 253 432 686</p>
+        <p class="text-sm text-gray-300 mb-2">Owned and operated by Trent Jordan, sole trader.</p>
+        <p class="text-sm text-gray-300 mb-4">
+          <strong>Contact:</strong> <a href="mailto:support@jazzpracticepro.com" class="hover:text-white underline">support@jazzpracticepro.com</a>
+        </p>
+        <p class="text-xs text-gray-400 mb-4">Registered business address: Dutton Park QLD 4102, Australia</p>
+        <p class="text-sm text-gray-300">
+          <a href="/privacy.html" class="hover:text-white underline">Privacy Policy</a> |
+          <a href="/terms.html" class="hover:text-white underline">Terms of Use</a> |
+          <a href="/refunds.html" class="hover:text-white underline">Refunds & Cancellations</a>
+        </p>
+        <p class="text-xs text-gray-400 mt-4">Last updated: 2025-11-08</p>
+      </div>
+    </footer>
   </body>
 </html>

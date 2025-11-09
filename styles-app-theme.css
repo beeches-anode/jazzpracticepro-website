@@ -1,0 +1,271 @@
+/**
+ * App-Inspired Theme Override
+ *
+ * This stylesheet applies color and styling changes to match the JazzPracticePro app.
+ * To disable: simply remove or comment out the link tag in index.html
+ * To enable: ensure this stylesheet is linked after styles.css
+ */
+
+/* ===== BACKGROUND & BASE COLORS ===== */
+
+/* Softer background matching app */
+body {
+  background-color: #f5f5f5 !important;
+}
+
+/* Update sections to use softer background */
+.hero-gradient {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff) !important;
+}
+
+/* ===== FEATURE CARDS - Colorful like app sections ===== */
+
+/* Track Activities - Orange */
+#features .grid > div:nth-child(1) {
+  background: linear-gradient(135deg, #f59e0b, #ea580c) !important;
+  color: white !important;
+  border: none !important;
+}
+
+#features .grid > div:nth-child(1) h3,
+#features .grid > div:nth-child(1) p {
+  color: white !important;
+}
+
+/* Repertoire Builder - Pink/Red */
+#features .grid > div:nth-child(2) {
+  background: linear-gradient(135deg, #ec4899, #db2777) !important;
+  color: white !important;
+  border: none !important;
+}
+
+#features .grid > div:nth-child(2) h3,
+#features .grid > div:nth-child(2) p {
+  color: white !important;
+}
+
+/* AI Feedback - Green */
+#features .grid > div:nth-child(3) {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  color: white !important;
+  border: none !important;
+}
+
+#features .grid > div:nth-child(3) h3,
+#features .grid > div:nth-child(3) p {
+  color: white !important;
+}
+
+/* Goal Setting - Blue */
+#features .grid > div:nth-child(4) {
+  background: linear-gradient(135deg, #3b82f6, #2563eb) !important;
+  color: white !important;
+  border: none !important;
+}
+
+#features .grid > div:nth-child(4) h3,
+#features .grid > div:nth-child(4) p {
+  color: white !important;
+}
+
+/* Enhanced hover effect for colorful cards */
+#features .grid > div {
+  transform: translateY(0);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#features .grid > div:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ===== PRIMARY CTA BUTTONS - Orange like app ===== */
+
+/* Primary CTAs use orange gradient */
+.hero-gradient a.bg-purple-600,
+section a.bg-purple-600,
+section button.bg-purple-600 {
+  background: linear-gradient(135deg, #f59e0b, #ea580c) !important;
+  border: none !important;
+}
+
+.hero-gradient a.bg-purple-600:hover,
+section a.bg-purple-600:hover,
+section button.bg-purple-600:hover {
+  background: linear-gradient(135deg, #ea580c, #dc2626) !important;
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* ===== SECONDARY BUTTONS ===== */
+
+/* Keep secondary buttons with purple outline for contrast */
+.hero-gradient a.border-purple-600 {
+  border-color: #f59e0b !important;
+  color: #f59e0b !important;
+}
+
+.hero-gradient a.border-purple-600:hover {
+  background-color: #fef3c7 !important;
+  border-color: #ea580c !important;
+  color: #ea580c !important;
+}
+
+/* ===== NAVIGATION ===== */
+
+/* Keep nav links with subtle color */
+nav a:hover {
+  color: #f59e0b !important;
+}
+
+/* ===== HOW IT WORKS SECTION - Numbered circles ===== */
+
+/* Update numbered circles to match app's colorful aesthetic */
+.py-16.px-6.max-w-6xl .bg-purple-100 {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b) !important;
+}
+
+.py-16.px-6.max-w-6xl .text-purple-600 {
+  color: white !important;
+}
+
+/* ===== GRADIENT SECTIONS ===== */
+
+/* Update gradient CTA section with warmer colors */
+.gradient-bg {
+  background: linear-gradient(135deg, #f59e0b, #ea580c, #db2777) !important;
+}
+
+/* Trial banner - keep gradient but add warmth */
+.bg-gradient-to-r.from-purple-600 {
+  background: linear-gradient(to right, #7c3aed, #3b82f6) !important;
+}
+
+/* ===== DEMO SECTION TABS ===== */
+
+/* Active tab - orange instead of purple */
+.demo-tab.border-purple-600 {
+  border-color: #f59e0b !important;
+  color: #ea580c !important;
+}
+
+.demo-tab:hover {
+  color: #f59e0b !important;
+}
+
+/* ===== FOOTER ===== */
+
+/* Footer links hover */
+footer a:hover {
+  color: #fbbf24 !important;
+}
+
+/* ===== EMAIL SIGNUP SECTION ===== */
+
+/* Focus states for input */
+#email-input:focus {
+  border-color: #f59e0b !important;
+  outline: 2px solid #f59e0b !important;
+  outline-offset: 2px;
+}
+
+/* ===== CARDS & CONTAINERS ===== */
+
+/* Add subtle shadow to white cards for depth on gray background */
+section .bg-white {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== ACCENT COLORS IN TEXT ===== */
+
+/* Update purple text references to warmer tones where appropriate */
+.text-purple-600 {
+  color: #7c3aed !important; /* Keep purple for brand text like logo */
+}
+
+/* Links that were purple */
+a.text-purple-600:hover,
+.hover\:text-purple-600:hover {
+  color: #f59e0b !important;
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+
+@media (max-width: 768px) {
+  /* Ensure colorful cards work well on mobile */
+  #features .grid > div {
+    margin-bottom: 1rem;
+  }
+}
+
+/* ===== OPTIONAL: Status badge colors (if you add them later) ===== */
+
+.badge-learned {
+  background-color: #fef3c7;
+  color: #92400e;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+}
+
+.badge-development {
+  background-color: #fed7aa;
+  color: #9a3412;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+}
+
+.badge-memorised {
+  background-color: #d9f99d;
+  color: #3f6212;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+}
+
+/* ===== BLOG PAGE SPECIFIC ===== */
+
+/* Active tag styling */
+.tag.active {
+  background-color: #f59e0b !important;
+  color: white !important;
+}
+
+.tag:hover {
+  background-color: #fef3c7 !important;
+}
+
+/* ===== HELP PAGES ===== */
+
+/* Quickstart gradient header */
+.gradient-bg {
+  background: linear-gradient(135deg, #f59e0b, #ea580c, #db2777) !important;
+}
+
+/* Step number circles in quickstart/features - colorful */
+.step-card .bg-purple-100 {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b) !important;
+}
+
+.step-card .text-purple-600 {
+  color: white !important;
+  font-weight: 700;
+}
+
+/* Tip boxes - use orange accent */
+.tip-box {
+  border-left-color: #f59e0b !important;
+  background-color: #fffbeb;
+}
+
+/* ===== NAVIGATION ACTIVE STATES ===== */
+
+/* Active nav link border */
+.border-purple-600 {
+  border-color: #f59e0b !important;
+}
+
+/* Active nav link text */
+nav a.text-purple-600.font-semibold {
+  color: #ea580c !important;
+}

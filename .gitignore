@@ -67,6 +67,9 @@ build/
 *.old
 
 # Local development files
-.local 
+.local
 # Local Netlify folder
 .netlify
+
+# Node modules
+node_modules/

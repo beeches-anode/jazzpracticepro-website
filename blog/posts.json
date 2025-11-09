@@ -1,0 +1,36 @@
+{
+  "posts": [
+    {
+      "id": "organize-jazz-practice-research-framework",
+      "title": "How to Organize Your Jazz Practice: A Research-Backed Framework",
+      "slug": "organize-jazz-practice-research-framework",
+      "excerpt": "Discover the essential practice domains jazz educators agree on, and learn how to balance technique, repertoire, ear training, and more for effective practice.",
+      "author": "Jazz Practice Pro Team",
+      "date": "2025-11-09",
+      "publishDate": "2025-11-09T10:00:00Z",
+      "updateDate": null,
+      "tags": ["practice-framework", "education", "practice-methods", "pillars"],
+      "category": "educational",
+      "readTime": "12 min read",
+      "heroImage": "/blog/assets/practice-organization.jpg",
+      "featured": true,
+      "status": "published"
+    },
+    {
+      "id": "no-shortcuts-charlie-parker-freddie-hubbard",
+      "title": "The Only Way to Get Good: What Charlie Parker and Freddie Hubbard Learned the Hard Way",
+      "slug": "no-shortcuts-charlie-parker-freddie-hubbard",
+      "excerpt": "Before Charlie Parker was Bird, he got laughed off stage. Learn what Parker and Freddie Hubbard discovered about fundamentals, practice, and the path to jazz mastery.",
+      "author": "Jazz Practice Pro Team",
+      "date": "2025-11-02",
+      "publishDate": "2025-11-02T10:00:00Z",
+      "updateDate": null,
+      "tags": ["fundamentals", "practice-methods", "jazz-history", "education"],
+      "category": "educational",
+      "readTime": "6 min read",
+      "heroImage": "/blog/assets/charlie-parker-practice.jpg",
+      "featured": false,
+      "status": "draft"
+    }
+  ]
+}
