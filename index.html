@@ -89,7 +89,7 @@
           "url": "https://jazzpracticepro.com/JazzPracticePro_logo_large.png"
         }
       },
-      "screenshot": "https://jazzpracticepro.com/media/demo.gif",
+      "screenshot": "https://jazzpracticepro.com/media/individual-practice-edit.gif",
       "featureList": [
         "Customizable practice tracking with 30 practice pillars",
         "Repertoire management with spaced repetition",
@@ -351,33 +351,58 @@
     <!-- Demo Section -->
     <section id="demo" class="py-16 px-6 bg-gray-50 text-center">
       <h2 class="text-3xl font-bold mb-8">See it in Action</h2>
+      <p class="text-gray-600 mb-6 max-w-3xl mx-auto">
+        JazzPracticePro is built mobile-first. See how easy it is to track your practice and manage your repertoire on the go.
+      </p>
       <div class="max-w-4xl mx-auto">
-        <div class="bg-white rounded-lg shadow-lg p-4">
-          <video
-            autoplay
-            loop
-            muted
-            playsinline
-            class="w-full rounded-lg"
-            width="600"
-            height="466"
-            poster="/media/demo-poster.jpg"
+        <!-- Tab Navigation -->
+        <div class="flex justify-center mb-6 border-b-2 border-gray-200">
+          <button
+            class="demo-tab px-8 py-4 text-lg font-semibold transition-all border-b-4 border-purple-600 text-purple-600"
+            data-tab="practice"
           >
-            <source src="/media/demo.webm" type="video/webm" />
-            <source src="/media/demo.mp4" type="video/mp4" />
-            <!-- Fallback for very old browsers -->
-            <img
-              src="/media/demo.gif"
-              alt="JazzPracticePro demo"
-              width="600"
-              height="466"
-            />
-          </video>
+            Track Your Practice
+          </button>
+          <button
+            class="demo-tab px-8 py-4 text-lg font-semibold transition-all border-b-4 border-transparent text-gray-500 hover:text-purple-600"
+            data-tab="repertoire"
+          >
+            Manage Your Repertoire
+          </button>
         </div>
-        <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
-          Watch how easy it is to track your practice sessions, manage your
-          repertoire, and get AI-powered insights to improve your jazz playing.
-        </p>
+
+        <!-- Tab Content -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <!-- Practice Demo -->
+          <div id="practice-demo" class="demo-content">
+            <div class="flex justify-center">
+              <img
+                src="/media/individual-practice-edit.gif"
+                alt="Adding a practice record in JazzPracticePro"
+                class="rounded-lg shadow-md max-w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+            <p class="text-gray-600 mt-6 text-sm">
+              Log practice sessions with structured editors based on 7 practice pillars
+            </p>
+          </div>
+
+          <!-- Repertoire Demo -->
+          <div id="repertoire-demo" class="demo-content hidden">
+            <div class="flex justify-center">
+              <img
+                src="/media/repertoire-edit.gif"
+                alt="Viewing a repertoire entry in JazzPracticePro"
+                class="rounded-lg shadow-md max-w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+            <p class="text-gray-600 mt-6 text-sm">
+              Track tunes with learning stages and spaced-repetition prompts
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -428,6 +453,14 @@
     <section id="about" class="py-16 px-6 bg-gray-50">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl font-bold mb-8">About JazzPracticePro</h2>
+        <div class="bg-white rounded-lg p-6 shadow-md max-w-2xl mx-auto mb-8">
+          <p class="text-gray-700">
+            JazzPracticePro is created and operated by <strong>Trent Jordan</strong> (ABN 57 253 432 686), a Brisbane-based jazz musician and educator, trading as JazzPracticePro.
+          </p>
+          <p class="text-gray-700 mt-3">
+            We provide online tools to help jazz students and professionals plan, track, and refine their practice.
+          </p>
+        </div>
         <p class="text-lg text-gray-600 mb-4">
           JazzPracticePro was born from a mix of seeking old-school discipline
           and a modern curiosity.
@@ -620,6 +653,20 @@
                   >Privacy Policy</a
                 >
               </li>
+              <li>
+                <a
+                  href="/terms.html"
+                  class="hover:text-white transition-colors"
+                  >Terms of Use</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/refunds.html"
+                  class="hover:text-white transition-colors"
+                  >Refunds & Cancellations</a
+                >
+              </li>
             </ul>
           </div>
           <div>
@@ -646,8 +693,17 @@
         <div
           class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-300"
         >
-          © 2025 JazzPracticePro. Built with 🎶 + ❤️ for jazz musicians
-          everywhere.
+          <p class="mb-2">© 2025 JazzPracticePro – ABN 57 253 432 686</p>
+          <p class="mb-2">Owned and operated by Trent Jordan, sole trader.</p>
+          <p class="mb-4">
+            <strong>Contact:</strong> <a href="mailto:support@jazzpracticepro.com" class="hover:text-white underline">support@jazzpracticepro.com</a>
+          </p>
+          <p class="mb-4 text-xs">Registered business address: 32 Park Rd W, Dutton Park QLD 4102, Australia</p>
+          <p>
+            <a href="/privacy.html" class="hover:text-white underline">Privacy Policy</a> |
+            <a href="/terms.html" class="hover:text-white underline">Terms of Use</a> |
+            <a href="/refunds.html" class="hover:text-white underline">Refunds & Cancellations</a>
+          </p>
         </div>
       </div>
     </footer>
@@ -736,6 +792,27 @@
 
       // Load recent posts on page load
       loadRecentPosts();
+
+      // Handle demo tabs
+      document.querySelectorAll('.demo-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+          const targetTab = this.getAttribute('data-tab');
+          
+          // Update tab styling
+          document.querySelectorAll('.demo-tab').forEach(t => {
+            t.classList.remove('border-purple-600', 'text-purple-600');
+            t.classList.add('border-transparent', 'text-gray-500');
+          });
+          this.classList.remove('border-transparent', 'text-gray-500');
+          this.classList.add('border-purple-600', 'text-purple-600');
+          
+          // Switch content
+          document.querySelectorAll('.demo-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          document.getElementById(targetTab + '-demo').classList.remove('hidden');
+        });
+      });
     </script>
   </body>
 </html>
