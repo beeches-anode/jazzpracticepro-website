@@ -46,7 +46,10 @@
     <link rel="canonical" href="https://jazzpracticepro.com/" />
 
     <!-- Robots Meta Tag -->
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
 
     <!-- Theme Color for Mobile Browsers -->
     <meta name="theme-color" content="#7c3aed" />
@@ -56,52 +59,52 @@
 
     <!-- Schema.org Structured Data for SoftwareApplication -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "JazzPracticePro",
-      "applicationCategory": "MusicApplication",
-      "operatingSystem": "Web Browser",
-      "description": "A simple, structured practice journal for jazz musicians. Track activities, build repertoire, and get AI feedback to improve your jazz skills.",
-      "url": "https://jazzpracticepro.com/",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "127",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "author": {
-        "@type": "Organization",
-        "name": "JazzPracticePro Team"
-      },
-      "publisher": {
-        "@type": "Organization",
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
         "name": "JazzPracticePro",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://jazzpracticepro.com/JazzPracticePro_logo_large.png"
-        }
-      },
-      "screenshot": "https://jazzpracticepro.com/media/individual-practice-edit.gif",
-      "featureList": [
-        "Customizable practice tracking with 30 practice pillars",
-        "Repertoire management with spaced repetition",
-        "AI-powered practice feedback and planning",
-        "Voice import for fast practice logging",
-        "Encrypted cloud backup",
-        "Offline-first Progressive Web App"
-      ],
-      "applicationSubCategory": "Practice Journal, Music Education",
-      "softwareVersion": "3.0",
-      "installUrl": "https://jazzpracticepro.app"
-    }
+        "applicationCategory": "MusicApplication",
+        "operatingSystem": "Web Browser",
+        "description": "A simple, structured practice journal for jazz musicians. Track activities, build repertoire, and get AI feedback to improve your jazz skills.",
+        "url": "https://jazzpracticepro.com/",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "127",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "JazzPracticePro Team"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "JazzPracticePro",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://jazzpracticepro.com/JazzPracticePro_logo_large.png"
+          }
+        },
+        "screenshot": "https://jazzpracticepro.com/media/individual-practice-edit.gif",
+        "featureList": [
+          "Customizable practice tracking with 30 practice pillars",
+          "Repertoire management with spaced repetition",
+          "AI-powered practice feedback and planning",
+          "Voice import for fast practice logging",
+          "Encrypted cloud backup",
+          "Offline-first Progressive Web App"
+        ],
+        "applicationSubCategory": "Practice Journal, Music Education",
+        "softwareVersion": "3.0",
+        "installUrl": "https://jazzpracticepro.app"
+      }
     </script>
 
     <!-- Favicon -->
@@ -111,6 +114,9 @@
 
     <!-- Tailwind CSS Production Build -->
     <link rel="stylesheet" href="/styles.css" />
+
+    <!-- App-Inspired Theme (comment out to disable) -->
+    <link rel="stylesheet" href="/styles-app-theme.css" />
   </head>
   <body class="bg-white text-gray-800">
     <!-- Skip Navigation Link -->
@@ -203,15 +209,11 @@
     </nav>
 
     <!-- Trial Banner -->
-    <div class="bg-gradient-to-r from-purple-600 to-blue-600 text-center py-3 px-4">
+    <div
+      class="bg-gradient-to-r from-purple-600 to-blue-600 text-center py-3 px-4"
+    >
       <p class="text-white text-sm sm:text-base font-semibold">
-        🎉 Limited Beta Access: Join 200+ jazz musicians getting early access to AI-powered practice tracking
-        <a
-          href="mailto:contact@jazzpracticepro.com"
-          class="underline hover:text-purple-200 ml-2 font-bold"
-        >
-          Request Beta Access →
-        </a>
+        🎉 Limited Beta Access: Get early access to AI-powered practice tracking
       </p>
     </div>
 
@@ -252,7 +254,7 @@
         </a>
       </div>
       <p class="text-sm text-gray-500 mt-2">
-        ✓ No credit card required  ✓ Free forever  ✓ 200+ musicians practicing
+        ✓ No credit card required ✓ Free forever
       </p>
     </section>
 
@@ -267,7 +269,7 @@
           <h3 class="text-xl font-semibold mb-3">Track Activities</h3>
           <p class="text-gray-600">
             Log individual, ensemble, gigs, lessons, and listening ideas with
-            structured editors based on 7 practice pillars.
+            structured editors.
           </p>
         </div>
         <div
@@ -304,27 +306,32 @@
     </section>
 
     <!-- Email Capture Section -->
-    <section class="py-12 px-4 bg-gradient-to-r from-purple-50 to-blue-50 border-y">
+    <section
+      class="py-12 px-4 bg-gradient-to-r from-purple-50 to-blue-50 border-y"
+    >
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-2xl md:text-3xl font-bold mb-4">
-          Get the Free Jazz Practice Guide
+          Join the Beta Program
         </h2>
         <p class="text-gray-600 mb-6 text-lg">
-          Join jazz musicians receiving weekly practice tips, insights, and product updates
+          Sign up to indicate your interest in beta access and receive product
+          updates. We'll notify you when you've been approved as a beta tester.
         </p>
         <form
           name="email-signup"
           method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
-          class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+          class="flex flex-col sm:flex-row gap-3 justify-center items-center max-w-2xl mx-auto"
         >
           <!-- Netlify forms requirement -->
           <input type="hidden" name="form-name" value="email-signup" />
 
           <!-- Honeypot for spam protection -->
           <p class="hidden">
-            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            <label
+              >Don't fill this out if you're human: <input name="bot-field"
+            /></label>
           </p>
 
           <input
@@ -333,17 +340,20 @@
             id="email-input"
             placeholder="Enter your email"
             required
-            class="flex-1 px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-purple-600 focus:outline-none text-base"
+            class="w-full sm:w-80 px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-purple-600 focus:outline-none text-base"
           />
           <button
             type="submit"
-            class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold whitespace-nowrap transition-colors"
+            class="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-bold text-lg whitespace-nowrap transition-all shadow-lg hover:shadow-xl"
           >
-            Get Free Guide
+            Sign Up for Beta
           </button>
         </form>
         <p class="text-sm text-gray-500 mt-4">
-          No spam. Unsubscribe anytime. Read our <a href="/privacy.html" class="underline hover:text-purple-600">privacy policy</a>.
+          No spam. Unsubscribe anytime. Read our
+          <a href="/privacy.html" class="underline hover:text-purple-600"
+            >privacy policy</a
+          >.
         </p>
       </div>
     </section>
@@ -352,7 +362,8 @@
     <section id="demo" class="py-16 px-6 bg-gray-50 text-center">
       <h2 class="text-3xl font-bold mb-8">See it in Action</h2>
       <p class="text-gray-600 mb-6 max-w-3xl mx-auto">
-        JazzPracticePro is built mobile-first. See how easy it is to track your practice and manage your repertoire on the go.
+        JazzPracticePro is built mobile-first. See how easy it is to track your
+        practice and manage your repertoire on the go.
       </p>
       <div class="max-w-4xl mx-auto">
         <!-- Tab Navigation -->
@@ -384,7 +395,8 @@
               />
             </div>
             <p class="text-gray-600 mt-6 text-sm">
-              Log practice sessions with structured editors based on 7 practice pillars
+              Log practice sessions with structured editors based on your
+              personalised practice pillars.
             </p>
           </div>
 
@@ -455,10 +467,13 @@
         <h2 class="text-3xl font-bold mb-8">About JazzPracticePro</h2>
         <div class="bg-white rounded-lg p-6 shadow-md max-w-2xl mx-auto mb-8">
           <p class="text-gray-700">
-            JazzPracticePro is created and operated by <strong>Trent Jordan</strong> (ABN 57 253 432 686), a Brisbane-based jazz musician and educator, trading as JazzPracticePro.
+            JazzPracticePro is created and operated by
+            <strong>Trent Jordan</strong> (ABN 57 253 432 686), a Brisbane-based
+            jazz student, trading as JazzPracticePro.
           </p>
           <p class="text-gray-700 mt-3">
-            We provide online tools to help jazz students and professionals plan, track, and refine their practice.
+            We provide online tools to help jazz students and professionals
+            plan, track, and refine their practice.
           </p>
         </div>
         <p class="text-lg text-gray-600 mb-4">
@@ -531,8 +546,8 @@
         Ready to Transform Your Jazz Practice?
       </h2>
       <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-        Join hundreds of jazz musicians using JazzPracticePro to track their development
-        and accelerate their growth.
+        Join hundreds of jazz musicians using JazzPracticePro to track their
+        development and accelerate their growth.
       </p>
       <a
         href="https://jazzpracticepro.app"
@@ -654,9 +669,7 @@
                 >
               </li>
               <li>
-                <a
-                  href="/terms.html"
-                  class="hover:text-white transition-colors"
+                <a href="/terms.html" class="hover:text-white transition-colors"
                   >Terms of Use</a
                 >
               </li>
@@ -696,13 +709,28 @@
           <p class="mb-2">© 2025 JazzPracticePro – ABN 57 253 432 686</p>
           <p class="mb-2">Owned and operated by Trent Jordan, sole trader.</p>
           <p class="mb-4">
-            <strong>Contact:</strong> <a href="mailto:support@jazzpracticepro.com" class="hover:text-white underline">support@jazzpracticepro.com</a>
+            <strong>Contact:</strong>
+            <a
+              href="mailto:support@jazzpracticepro.com"
+              class="hover:text-white underline"
+              >support@jazzpracticepro.com</a
+            >
           </p>
-          <p class="mb-4 text-xs">Registered business address: 32 Park Rd W, Dutton Park QLD 4102, Australia</p>
+          <p class="mb-4 text-xs">
+            Registered business address: Dutton Park QLD 4102, Australia
+          </p>
           <p>
-            <a href="/privacy.html" class="hover:text-white underline">Privacy Policy</a> |
-            <a href="/terms.html" class="hover:text-white underline">Terms of Use</a> |
-            <a href="/refunds.html" class="hover:text-white underline">Refunds & Cancellations</a>
+            <a href="/privacy.html" class="hover:text-white underline"
+              >Privacy Policy</a
+            >
+            |
+            <a href="/terms.html" class="hover:text-white underline"
+              >Terms of Use</a
+            >
+            |
+            <a href="/refunds.html" class="hover:text-white underline"
+              >Refunds & Cancellations</a
+            >
           </p>
         </div>
       </div>
@@ -794,23 +822,25 @@
       loadRecentPosts();
 
       // Handle demo tabs
-      document.querySelectorAll('.demo-tab').forEach(tab => {
-        tab.addEventListener('click', function() {
-          const targetTab = this.getAttribute('data-tab');
-          
+      document.querySelectorAll(".demo-tab").forEach((tab) => {
+        tab.addEventListener("click", function () {
+          const targetTab = this.getAttribute("data-tab");
+
           // Update tab styling
-          document.querySelectorAll('.demo-tab').forEach(t => {
-            t.classList.remove('border-purple-600', 'text-purple-600');
-            t.classList.add('border-transparent', 'text-gray-500');
+          document.querySelectorAll(".demo-tab").forEach((t) => {
+            t.classList.remove("border-purple-600", "text-purple-600");
+            t.classList.add("border-transparent", "text-gray-500");
           });
-          this.classList.remove('border-transparent', 'text-gray-500');
-          this.classList.add('border-purple-600', 'text-purple-600');
-          
+          this.classList.remove("border-transparent", "text-gray-500");
+          this.classList.add("border-purple-600", "text-purple-600");
+
           // Switch content
-          document.querySelectorAll('.demo-content').forEach(content => {
-            content.classList.add('hidden');
+          document.querySelectorAll(".demo-content").forEach((content) => {
+            content.classList.add("hidden");
           });
-          document.getElementById(targetTab + '-demo').classList.remove('hidden');
+          document
+            .getElementById(targetTab + "-demo")
+            .classList.remove("hidden");
         });
       });
     </script>
