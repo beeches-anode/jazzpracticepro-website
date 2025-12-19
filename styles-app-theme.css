@@ -269,3 +269,57 @@ a.text-purple-600:hover,
 nav a.text-purple-600.font-semibold {
   color: #ea580c !important;
 }
+
+/* ===== BYOK SECTION STYLING ===== */
+
+/* BYOK CTA Button Fix - ensure visibility */
+#byok a.bg-green-600 {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  color: white !important;
+}
+
+#byok a.bg-green-600:hover {
+  background: linear-gradient(135deg, #059669, #047857) !important;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4) !important;
+}
+
+/* BYOK How It Works - Styled Number Circles */
+#byok .bg-green-100 {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+#byok .bg-green-100 .text-green-600 {
+  color: white !important;
+}
+
+/* BYOK Benefit Cards - Soft Green Gradients */
+#byok .grid.grid-cols-1.md\:grid-cols-2 > div:nth-child(1) {
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5) !important;
+  border-left: 4px solid #10b981;
+}
+
+#byok .grid.grid-cols-1.md\:grid-cols-2 > div:nth-child(2) {
+  background: linear-gradient(135deg, #f0fdfa, #ccfbf1) !important;
+  border-left: 4px solid #14b8a6;
+}
+
+#byok .grid.grid-cols-1.md\:grid-cols-2 > div:nth-child(3) {
+  background: linear-gradient(135deg, #ecfdf5, #a7f3d0) !important;
+  border-left: 4px solid #059669;
+}
+
+#byok .grid.grid-cols-1.md\:grid-cols-2 > div:nth-child(4) {
+  background: linear-gradient(135deg, #ecfeff, #cffafe) !important;
+  border-left: 4px solid #06b6d4;
+}
+
+/* Hover effect for BYOK benefit cards */
+#byok .grid.grid-cols-1.md\:grid-cols-2 > div {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#byok .grid.grid-cols-1.md\:grid-cols-2 > div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
+}

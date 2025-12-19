@@ -165,8 +165,14 @@
               <li class="flex items-start">
                 <span class="text-purple-500 mr-2 mt-1">•</span>
                 <span
-                  ><strong>Welcome screen:</strong> Learn what JazzPracticePro
-                  offers</span
+                  ><strong>Authentication</strong> Sign in with email + OTP code
+                </span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2 mt-1">•</span>
+                <span
+                  ><strong>Restore options:</strong> Import existing data or
+                  start fresh if you're a returning user</span
                 >
               </li>
               <li class="flex items-start">
@@ -193,22 +199,16 @@
               <li class="flex items-start">
                 <span class="text-purple-500 mr-2 mt-1">•</span>
                 <span
-                  ><strong>Authentication</strong> (optional): Sign in with
-                  email + OTP code for cloud backup access</span
-                >
-              </li>
-              <li class="flex items-start">
-                <span class="text-purple-500 mr-2 mt-1">•</span>
-                <span
-                  ><strong>Restore options:</strong> Import existing data or
-                  start fresh</span
+                  ><strong>Backup:</strong> Create your first backup to save
+                  your setup and start using the application.</span
                 >
               </li>
             </ul>
             <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
               <p class="text-sm text-blue-800">
-                <strong>Note:</strong> You can skip authentication and use the
-                app entirely offline. Sign-in is only needed for cloud backup.
+                <strong>Note:</strong> You can skip the backup and use the app
+                locally. The cloud backup is optional, but will enable you to
+                restore your data easily from any device.
               </p>
             </div>
           </div>
@@ -576,14 +576,6 @@
           </div>
 
           <div class="ml-16">
-            <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-              <p class="text-sm text-green-800">
-                <strong>Want more than 5 AI calls per month?</strong> Use your
-                own Google Gemini API key for unlimited access — completely
-                free.
-              </p>
-            </div>
-
             <h4 class="font-bold text-lg mb-3 text-gray-800">
               Step 1: Get Your Free API Key
             </h4>
@@ -638,7 +630,10 @@
               </li>
               <li class="flex items-start">
                 <span class="font-bold mr-2">2.</span>
-                <span>Go to <strong>Settings</strong> → <strong>AI Setup (BYOK)</strong></span>
+                <span
+                  >Go to <strong>Settings</strong> →
+                  <strong>AI Setup (BYOK)</strong></span
+                >
               </li>
               <li class="flex items-start">
                 <span class="font-bold mr-2">3.</span>
@@ -658,9 +653,14 @@
               Is This Really Free?
             </h4>
             <p class="text-gray-600 mb-6">
-              Yes. Google's Gemini API includes a free tier that's more than
-              enough for daily practice feedback. You're using Google's AI
+              Yes. Google's Gemini API includes a free tier that should cover
+              typical daily practice feedback usage. You're using Google's AI
               directly — JazzPracticePro just helps you connect to it securely.
+              Free tier limits may vary; check
+              <a href="https://ai.google.dev/gemini-api/docs/rate-limits"
+                 target="_blank" rel="noopener noreferrer"
+                 class="text-purple-600 underline hover:text-purple-700">Google's
+              current limits</a> for details.
             </p>
 
             <h4 class="font-bold text-lg mb-3 text-gray-800">
@@ -868,9 +868,13 @@
               What are the limits of the free Gemini tier?
             </h3>
             <p class="text-gray-600">
-              Google's free tier allows approximately 60 requests per minute and
-              1,500 per day — far more than any musician would need for practice
-              feedback.
+              Google's free tier limits vary by model and may change over time.
+              For most users, the free tier provides enough requests for regular
+              practice feedback. Check
+              <a href="https://ai.google.dev/gemini-api/docs/rate-limits"
+                 target="_blank" rel="noopener noreferrer"
+                 class="text-purple-600 underline hover:text-purple-700">Google's
+              rate limits page</a> for current details.
             </p>
           </div>
         </div>
@@ -880,16 +884,35 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 px-4">
       <div class="max-w-6xl mx-auto text-center">
-        <p class="text-sm text-gray-300 mb-2">© 2025 JazzPracticePro – ABN 57 253 432 686</p>
-        <p class="text-sm text-gray-300 mb-2">Owned and operated by Trent Jordan, sole trader.</p>
-        <p class="text-sm text-gray-300 mb-4">
-          <strong>Contact:</strong> <a href="mailto:contact@jazzpracticepro.com" class="hover:text-white underline">contact@jazzpracticepro.com</a>
+        <p class="text-sm text-gray-300 mb-2">
+          © 2025 JazzPracticePro – ABN 57 253 432 686
         </p>
-        <p class="text-xs text-gray-400 mb-4">Registered business address: Dutton Park QLD 4102, Australia</p>
+        <p class="text-sm text-gray-300 mb-2">
+          Owned and operated by Trent Jordan, sole trader.
+        </p>
+        <p class="text-sm text-gray-300 mb-4">
+          <strong>Contact:</strong>
+          <a
+            href="mailto:contact@jazzpracticepro.com"
+            class="hover:text-white underline"
+            >contact@jazzpracticepro.com</a
+          >
+        </p>
+        <p class="text-xs text-gray-400 mb-4">
+          Registered business address: Dutton Park QLD 4102, Australia
+        </p>
         <p class="text-sm text-gray-300">
-          <a href="/privacy.html" class="hover:text-white underline">Privacy Policy</a> |
-          <a href="/terms.html" class="hover:text-white underline">Terms of Use</a> |
-          <a href="/refunds.html" class="hover:text-white underline">Refunds & Cancellations</a>
+          <a href="/privacy.html" class="hover:text-white underline"
+            >Privacy Policy</a
+          >
+          |
+          <a href="/terms.html" class="hover:text-white underline"
+            >Terms of Use</a
+          >
+          |
+          <a href="/refunds.html" class="hover:text-white underline"
+            >Refunds & Cancellations</a
+          >
         </p>
         <p class="text-xs text-gray-400 mt-4">Last updated: 2025-11-08</p>
       </div>
