@@ -8,3 +8,4 @@ For transparency, these serverless endpoints control AI usage. They don’t stor
 - POST /.netlify/functions/refund-credit — Refund on failure
 
 See the app’s operations documentation for authoritative details.
+

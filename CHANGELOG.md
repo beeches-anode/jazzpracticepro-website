@@ -7,3 +7,4 @@
 - Add help pages: features, quickstart, statistics, transcriptions, ai-credits, backup, auth
 - Add docs/api/endpoints.md summarizing AI control endpoints
 - Update index.html nav links and feature descriptions
+

@@ -102,3 +102,4 @@ Pillars are customizable practice categories that structure your sessions. You h
 - Contact us: [contact@jazzpracticepro.com](mailto:contact@jazzpracticepro.com)
 
 _Last updated: 2025-11-02_
+
